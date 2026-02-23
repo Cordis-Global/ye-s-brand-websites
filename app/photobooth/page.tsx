@@ -1,7 +1,5 @@
 'use client';
 
-import React from 'react';
-
 import {
   AlertCircle,
   ArrowLeft,
@@ -12,8 +10,10 @@ import {
   Sparkles,
   Users,
 } from 'lucide-react';
-import Link from 'next/link';
 import { useState } from 'react';
+
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface BookingPackage {
   id: number;
@@ -148,7 +148,6 @@ const packages: BookingPackage[] = [
   },
 ];
 
-// Mock booked dates
 const bookedDates: BookedDate[] = [
   { date: '2024-02-14', bookedByName: 'Sarah & John' },
   { date: '2024-02-15', bookedByName: 'Corporate Event' },
@@ -187,12 +186,10 @@ export default function Photobooth() {
     const lastDay = new Date(year, month, getDaysInMonth(firstDay));
     const daysArray: (number | null)[] = [];
 
-    // Add empty cells for days before month starts
     for (let i = 0; i < firstDay.getDay(); i++) {
       daysArray.push(null);
     }
 
-    // Add days of the month
     for (let i = 1; i <= getDaysInMonth(firstDay); i++) {
       daysArray.push(i);
     }
@@ -202,7 +199,7 @@ export default function Photobooth() {
 
   const handleBookingSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate booking submission
+
     setSubmitStatus('success');
     setTimeout(() => {
       setShowBookingForm(false);
@@ -225,28 +222,57 @@ export default function Photobooth() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+      <header className="sticky top-0 z-40 bg-[#004E89]/95 backdrop-blur-xl border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
           <Link
             href="/"
-            className="inline-flex items-center text-accent hover:text-accent/80 transition-colors mb-4"
+            className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm font-semibold"
           >
-            <ArrowLeft className="w-4 h-4 mr-2" />
+            <ArrowLeft className="w-4 h-4" />
             Back
           </Link>
-          <div>
-            <h1 className="text-3xl sm:text-4xl font-light text-foreground">
-              Photobooth by Ye
-            </h1>
-            <p className="text-muted-foreground mt-1">
-              Premium photobooth rentals for your special event
-            </p>
-          </div>
+          <span className="text-sm font-black text-white tracking-tight">
+            Photobooth
+          </span>
+          <div className="w-16" />
         </div>
       </header>
 
-      {/* Packages Section */}
+      <div className="relative bg-linear-to-br from-[#001f3d] via-[#004E89] to-[#0069b5] text-white overflow-hidden">
+        <div className="absolute inset-0 bg-dot-pattern opacity-100 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#6DD5FA]/15 rounded-full -mr-32 -mt-32 blur-3xl animate-float pointer-events-none" />
+        <div
+          className="absolute bottom-0 left-0 w-64 h-64 bg-[#FF6B35]/10 rounded-full -ml-20 -mb-20 blur-3xl animate-float pointer-events-none"
+          style={{ animationDelay: '2.5s' }}
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div className="shrink-0 p-3 bg-white rounded-2xl shadow-2xl">
+              <Image
+                src="/icons/photo-booth-white.jpeg"
+                alt="Photobooth"
+                width={72}
+                height={72}
+                className="object-contain"
+              />
+            </div>
+            <div>
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#6DD5FA] mb-3">
+                Collection 03
+              </p>
+              <h1 className="text-4xl sm:text-6xl font-black text-white leading-tight">
+                Photobooth
+              </h1>
+              <p className="text-white/45 text-base font-light mt-1">by Ye</p>
+              <p className="text-white/55 mt-3 max-w-lg text-sm leading-relaxed">
+                Premium photobooth experiences — capture unforgettable moments
+                with state-of-the-art equipment at your next event.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-12">
           <h2 className="text-3xl sm:text-4xl font-light text-foreground mb-4 text-center">
@@ -295,7 +321,7 @@ export default function Photobooth() {
                       key={idx}
                       className="flex items-start gap-3 text-sm"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
                       <span className="text-foreground">{feature}</span>
                     </li>
                   ))}
@@ -320,7 +346,6 @@ export default function Photobooth() {
         </div>
       </section>
 
-      {/* Calendar Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-border">
         <div className="mb-12">
           <h2 className="text-3xl sm:text-4xl font-light text-foreground mb-2 text-center">
@@ -332,7 +357,6 @@ export default function Photobooth() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Calendar */}
           <div className="lg:col-span-2">
             <div className="bg-card border border-border rounded-lg p-6">
               <div className="grid grid-cols-7 gap-2 mb-4">
@@ -389,7 +413,6 @@ export default function Photobooth() {
               </div>
             </div>
 
-            {/* Legend */}
             <div className="mt-6 flex flex-wrap gap-4 text-sm">
               <div className="flex items-center gap-2">
                 <div className="w-4 h-4 rounded bg-accent" />
@@ -402,7 +425,6 @@ export default function Photobooth() {
             </div>
           </div>
 
-          {/* Booked Dates */}
           <div className="bg-card border border-border rounded-lg p-6">
             <h3 className="text-lg font-medium text-foreground mb-4">
               Booked Dates
@@ -413,7 +435,7 @@ export default function Photobooth() {
                   key={idx}
                   className="flex items-start gap-3 pb-3 border-b border-border last:border-0"
                 >
-                  <Calendar className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                  <Calendar className="w-4 h-4 text-accent mt-0.5 shrink-0" />
                   <div>
                     <p className="text-sm font-medium text-foreground">
                       {new Date(booking.date).toLocaleDateString('en-US', {
@@ -432,7 +454,6 @@ export default function Photobooth() {
         </div>
       </section>
 
-      {/* Booking Form Modal */}
       {showBookingForm && (
         <div
           className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
@@ -573,7 +594,7 @@ export default function Photobooth() {
 
                 <div className="bg-muted p-4 rounded-lg">
                   <div className="flex items-start gap-2 text-sm text-foreground">
-                    <AlertCircle className="w-4 h-4 mt-0.5 flex-shrink-0 text-accent" />
+                    <AlertCircle className="w-4 h-4 mt-0.5 shrink-0 text-accent" />
                     <p>
                       Payment will be processed on-site. Please bring a valid
                       form of payment to the event.
@@ -602,7 +623,6 @@ export default function Photobooth() {
         </div>
       )}
 
-      {/* Features Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-border">
         <h2 className="text-3xl sm:text-4xl font-light text-foreground mb-12 text-center">
           Why Choose Our Photobooth?

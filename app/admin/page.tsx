@@ -1,33 +1,31 @@
-'use client'
+'use client';
 
-import React from "react"
-
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import {
-  LogOut,
-  Eye,
-  EyeOff,
+  AlertCircle,
   BarChart3,
-  Calendar,
-  MapPin,
-  DollarSign,
-  TrendingUp,
   CheckCircle2,
   Clock,
-  AlertCircle,
+  DollarSign,
   Download,
-} from 'lucide-react'
+  Eye,
+  EyeOff,
+  LogOut,
+  MapPin,
+  TrendingUp,
+} from 'lucide-react';
+import { useState } from 'react';
+
+import Link from 'next/link';
 
 interface Booking {
-  id: number
-  type: 'photobooth' | 'serene' | 'design'
-  clientName: string
-  clientEmail: string
-  date: string
-  amount?: number
-  status: 'confirmed' | 'pending' | 'completed'
-  details: string
+  id: number;
+  type: 'photobooth' | 'serene' | 'design';
+  clientName: string;
+  clientEmail: string;
+  date: string;
+  amount?: number;
+  status: 'confirmed' | 'pending' | 'completed';
+  details: string;
 }
 
 const mockBookings: Booking[] = [
@@ -89,38 +87,43 @@ const mockBookings: Booking[] = [
     status: 'confirmed',
     details: 'Deluxe Package - 6 hours',
   },
-]
+];
 
 export default function AdminDashboard() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [password, setPassword] = useState('')
-  const [showPassword, setShowPassword] = useState(false)
-  const [authError, setAuthError] = useState('')
-  const [selectedFilter, setSelectedFilter] = useState<'all' | 'photobooth' | 'serene' | 'design'>('all')
-  const [statusFilter, setStatusFilter] = useState<'all' | 'pending' | 'confirmed' | 'completed'>('all')
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [authError, setAuthError] = useState('');
+  const [selectedFilter, setSelectedFilter] = useState<
+    'all' | 'photobooth' | 'serene' | 'design'
+  >('all');
+  const [statusFilter, setStatusFilter] = useState<
+    'all' | 'pending' | 'confirmed' | 'completed'
+  >('all');
 
   const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Simple password check (in production, this should be secure)
+    e.preventDefault();
     if (password === 'YeBrands2024') {
-      setIsAuthenticated(true)
-      setAuthError('')
-      setPassword('')
+      setIsAuthenticated(true);
+      setAuthError('');
+      setPassword('');
     } else {
-      setAuthError('Invalid password')
+      setAuthError('Invalid password');
     }
-  }
+  };
 
   const handleLogout = () => {
-    setIsAuthenticated(false)
-    setPassword('')
-  }
+    setIsAuthenticated(false);
+    setPassword('');
+  };
 
   const filteredBookings = mockBookings.filter((booking) => {
-    const typeMatch = selectedFilter === 'all' || booking.type === selectedFilter
-    const statusMatch = statusFilter === 'all' || booking.status === statusFilter
-    return typeMatch && statusMatch
-  })
+    const typeMatch =
+      selectedFilter === 'all' || booking.type === selectedFilter;
+    const statusMatch =
+      statusFilter === 'all' || booking.status === statusFilter;
+    return typeMatch && statusMatch;
+  });
 
   const stats = {
     totalBookings: mockBookings.length,
@@ -130,11 +133,11 @@ export default function AdminDashboard() {
     revenue: mockBookings
       .filter((b) => b.amount)
       .reduce((sum, b) => sum + (b.amount || 0), 0),
-  }
+  };
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-background to-muted flex items-center justify-center p-4">
+      <div className="min-h-screen bg-linear-to-br from-background to-muted flex items-center justify-center p-4">
         <div className="w-full max-w-md">
           <div className="bg-card rounded-lg border border-border p-8 shadow-xl">
             <div className="mb-8">
@@ -144,7 +147,10 @@ export default function AdminDashboard() {
               <p className="text-muted-foreground">Admin Dashboard</p>
             </div>
 
-            <form onSubmit={handleLogin} className="space-y-4">
+            <form
+              onSubmit={handleLogin}
+              className="space-y-4"
+            >
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Admin Password
@@ -154,8 +160,8 @@ export default function AdminDashboard() {
                     type={showPassword ? 'text' : 'password'}
                     value={password}
                     onChange={(e) => {
-                      setPassword(e.target.value)
-                      setAuthError('')
+                      setPassword(e.target.value);
+                      setAuthError('');
                     }}
                     className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
                     placeholder="Enter password"
@@ -197,12 +203,11 @@ export default function AdminDashboard() {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
       <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <div>
@@ -232,11 +237,12 @@ export default function AdminDashboard() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
           <div className="bg-card border border-border rounded-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-muted-foreground">Total Bookings</span>
+              <span className="text-sm text-muted-foreground">
+                Total Bookings
+              </span>
               <BarChart3 className="w-4 h-4 text-accent" />
             </div>
             <p className="text-3xl font-light text-foreground">
@@ -256,7 +262,9 @@ export default function AdminDashboard() {
 
           <div className="bg-card border border-border rounded-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-muted-foreground">Serene Escapes</span>
+              <span className="text-sm text-muted-foreground">
+                Serene Escapes
+              </span>
               <MapPin className="w-4 h-4 text-accent" />
             </div>
             <p className="text-3xl font-light text-foreground">
@@ -266,7 +274,9 @@ export default function AdminDashboard() {
 
           <div className="bg-card border border-border rounded-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-muted-foreground">Design Orders</span>
+              <span className="text-sm text-muted-foreground">
+                Design Orders
+              </span>
               <TrendingUp className="w-4 h-4 text-accent" />
             </div>
             <p className="text-3xl font-light text-foreground">
@@ -285,32 +295,33 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        {/* Filters */}
         <div className="mb-8 flex flex-col sm:flex-row gap-4">
           <div>
             <label className="block text-sm font-medium text-foreground mb-2">
               Filter by Service
             </label>
             <div className="flex gap-2 flex-wrap">
-              {(['all', 'photobooth', 'serene', 'design'] as const).map((filter) => (
-                <button
-                  key={filter}
-                  onClick={() => setSelectedFilter(filter)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                    selectedFilter === filter
-                      ? 'bg-accent text-accent-foreground'
-                      : 'bg-muted text-foreground hover:bg-muted/80'
-                  }`}
-                >
-                  {filter === 'all'
-                    ? 'All Services'
-                    : filter === 'photobooth'
-                      ? 'Photobooth'
-                      : filter === 'serene'
-                        ? 'Serene Escapes'
-                        : 'Design'}
-                </button>
-              ))}
+              {(['all', 'photobooth', 'serene', 'design'] as const).map(
+                (filter) => (
+                  <button
+                    key={filter}
+                    onClick={() => setSelectedFilter(filter)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                      selectedFilter === filter
+                        ? 'bg-accent text-accent-foreground'
+                        : 'bg-muted text-foreground hover:bg-muted/80'
+                    }`}
+                  >
+                    {filter === 'all'
+                      ? 'All Services'
+                      : filter === 'photobooth'
+                        ? 'Photobooth'
+                        : filter === 'serene'
+                          ? 'Serene Escapes'
+                          : 'Design'}
+                  </button>
+                ),
+              )}
             </div>
           </div>
 
@@ -319,21 +330,23 @@ export default function AdminDashboard() {
               Filter by Status
             </label>
             <div className="flex gap-2 flex-wrap">
-              {(['all', 'pending', 'confirmed', 'completed'] as const).map((status) => (
-                <button
-                  key={status}
-                  onClick={() => setStatusFilter(status)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                    statusFilter === status
-                      ? 'bg-accent text-accent-foreground'
-                      : 'bg-muted text-foreground hover:bg-muted/80'
-                  }`}
-                >
-                  {status === 'all'
-                    ? 'All Status'
-                    : status.charAt(0).toUpperCase() + status.slice(1)}
-                </button>
-              ))}
+              {(['all', 'pending', 'confirmed', 'completed'] as const).map(
+                (status) => (
+                  <button
+                    key={status}
+                    onClick={() => setStatusFilter(status)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                      statusFilter === status
+                        ? 'bg-accent text-accent-foreground'
+                        : 'bg-muted text-foreground hover:bg-muted/80'
+                    }`}
+                  >
+                    {status === 'all'
+                      ? 'All Status'
+                      : status.charAt(0).toUpperCase() + status.slice(1)}
+                  </button>
+                ),
+              )}
             </div>
           </div>
 
@@ -345,7 +358,6 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        {/* Bookings Table */}
         <div className="bg-card border border-border rounded-lg overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
@@ -452,10 +464,9 @@ export default function AdminDashboard() {
         </div>
       </main>
     </div>
-  )
+  );
 }
 
-// Import Camera for the stats display
 function Camera({ className }: { className: string }) {
   return (
     <svg
@@ -477,5 +488,5 @@ function Camera({ className }: { className: string }) {
         d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
       />
     </svg>
-  )
+  );
 }

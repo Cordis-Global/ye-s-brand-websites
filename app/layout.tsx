@@ -1,15 +1,14 @@
-import React from "react"
-import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
+import { Analytics } from '@vercel/analytics/next';
+import type { Metadata } from 'next';
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+import React from 'react';
+
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Brands by Ye',
-  description: 'Explore luxury vacation rentals, bespoke graphic design, and premium photobooth experiences',
+  description:
+    'Explore luxury vacation rentals, bespoke graphic design, and premium photobooth experiences',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -28,12 +27,12 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-icon.png',
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -42,5 +41,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

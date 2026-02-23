@@ -9,8 +9,10 @@ import {
   Users,
   Wifi,
 } from 'lucide-react';
-import Link from 'next/link';
 import { useState } from 'react';
+
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface Property {
   id: number;
@@ -179,7 +181,7 @@ const properties: Property[] = [
   },
 ];
 
-export default function SereneEscapes() {
+export default function SereneEscapesPage() {
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(
     null,
   );
@@ -229,9 +231,8 @@ export default function SereneEscapes() {
     setIsProcessing(true);
 
     const roomTotal = selectedProperty.price * numberOfNights;
-    const totalAmount = (roomTotal + securityDeposit) * 100; // Amount in pesewas
+    const totalAmount = (roomTotal + securityDeposit) * 100;
 
-    // Load Paystack script
     const script = document.createElement('script');
     script.src = 'https://js.paystack.co/v1/inline.js';
     script.async = true;
@@ -270,45 +271,72 @@ export default function SereneEscapes() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+      <header className="sticky top-0 z-40 bg-[#1D4E08]/95 backdrop-blur-xl border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
           <Link
             href="/"
-            className="inline-flex items-center text-accent hover:text-accent/80 transition-colors mb-4"
+            className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm font-semibold"
           >
-            <ArrowLeft className="w-4 h-4 mr-2" />
+            <ArrowLeft className="w-4 h-4" />
             Back
           </Link>
-          <div>
-            <h1 className="text-3xl sm:text-4xl font-light text-foreground">
-              Serene Escapes by Ye
-            </h1>
-            <p className="text-muted-foreground mt-1">
-              Discover luxury vacation rentals
-            </p>
-          </div>
+          <span className="text-sm font-black text-white tracking-tight">
+            Serene Escapes
+          </span>
+          <div className="w-16" />
         </div>
       </header>
 
-      {/* Filters */}
-      <div className="border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-            <div>
-              <h3 className="text-sm font-medium text-foreground mb-2 sm:mb-0">
-                Filter by Guest Capacity
-              </h3>
+      <div className="relative bg-linear-to-br from-[#0a2903] via-[#1D4E08] to-[#153805] text-white overflow-hidden">
+        <div className="absolute inset-0 bg-dot-pattern opacity-100 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#FF6B35]/15 rounded-full -mr-32 -mt-32 blur-3xl animate-float pointer-events-none" />
+        <div
+          className="absolute bottom-0 left-0 w-64 h-64 bg-[#6fcf4a]/10 rounded-full -ml-20 -mb-20 blur-3xl animate-float pointer-events-none"
+          style={{ animationDelay: '3s' }}
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div className="shrink-0 p-3 bg-white rounded-2xl shadow-2xl">
+              <Image
+                src="/icons/serene-black.jpeg"
+                alt="Serene Escapes"
+                width={72}
+                height={72}
+                className="object-contain"
+              />
             </div>
+            <div>
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#6fcf4a] mb-3">
+                Collection 01
+              </p>
+              <h1 className="text-4xl sm:text-6xl font-black text-white leading-tight">
+                Serene Escapes
+              </h1>
+              <p className="text-white/45 text-base font-light mt-1">by Ye</p>
+              <p className="text-white/55 mt-3 max-w-lg text-sm leading-relaxed">
+                Discover curated luxury vacation rentals. Experience tranquility
+                in handpicked homes designed for the discerning traveler.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-b border-border bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+          <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+            <h3 className="text-sm font-bold text-foreground">
+              Filter by Guest Capacity
+            </h3>
             <div className="flex gap-2 flex-wrap">
               {['all', '4', '6', '8', '10'].map((count) => (
                 <button
                   key={count}
                   onClick={() => setGuestCount(count)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                  className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
                     guestCount === count
-                      ? 'bg-accent text-accent-foreground'
-                      : 'bg-muted text-foreground hover:bg-muted/80'
+                      ? 'bg-[#1D4E08] text-white shadow-md'
+                      : 'bg-muted text-foreground hover:bg-[#1D4E08]/10 hover:text-[#1D4E08]'
                   }`}
                 >
                   {count === 'all' ? 'All Properties' : `${count}+ Guests`}
@@ -319,7 +347,6 @@ export default function SereneEscapes() {
         </div>
       </div>
 
-      {/* Properties Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-6">
           <p className="text-muted-foreground">
@@ -335,20 +362,10 @@ export default function SereneEscapes() {
               className="group cursor-pointer rounded-lg overflow-hidden border border-border hover:shadow-xl transition-all duration-300"
               onClick={() => setSelectedProperty(property)}
             >
-              {/* Property Image */}
               <div
                 className="w-full h-64 relative overflow-hidden bg-cover bg-center"
                 style={{ backgroundImage: `url(${property.images[0]})` }}
-              >
-                {/* <div className="absolute top-4 right-4 bg-background/90 backdrop-blur px-3 py-1.5 rounded-full flex items-center gap-1">
-                  <Star className="w-4 h-4 fill-accent text-accent" />
-                  <span className="text-sm font-medium text-foreground">
-                    {property.rating}
-                  </span>
-                </div> */}
-              </div>
-
-              {/* Property Info */}
+              ></div>
               <div className="p-4 sm:p-6 bg-card">
                 <h3 className="text-lg font-medium text-foreground mb-2 text-balance">
                   {property.name}
@@ -364,9 +381,6 @@ export default function SereneEscapes() {
                     <Users className="w-4 h-4" />
                     {property.guests} guests
                   </div>
-                  {/* <div>
-                    {property.reviews} reviews
-                  </div> */}
                 </div>
 
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -408,7 +422,6 @@ export default function SereneEscapes() {
         </div>
       </section>
 
-      {/* Property Detail Modal */}
       {selectedProperty && (
         <div
           className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
@@ -418,14 +431,12 @@ export default function SereneEscapes() {
             className="bg-card rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Modal Header with Image Carousel */}
             <div
               className="relative w-full h-80 bg-cover bg-center group"
               style={{
                 backgroundImage: `url(${selectedProperty.images[currentImageIndex]})`,
               }}
             >
-              {/* Previous Button */}
               {selectedProperty.images.length > 1 && (
                 <button
                   onClick={(e) => {
@@ -442,7 +453,6 @@ export default function SereneEscapes() {
                 </button>
               )}
 
-              {/* Next Button */}
               {selectedProperty.images.length > 1 && (
                 <button
                   onClick={(e) => {
@@ -459,14 +469,12 @@ export default function SereneEscapes() {
                 </button>
               )}
 
-              {/* Image Counter */}
               {selectedProperty.images.length > 1 && (
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-background/80 backdrop-blur px-3 py-1 rounded-full text-sm font-medium">
                   {currentImageIndex + 1} / {selectedProperty.images.length}
                 </div>
               )}
 
-              {/* Close Button */}
               <button
                 onClick={() => {
                   setSelectedProperty(null);
@@ -491,7 +499,6 @@ export default function SereneEscapes() {
               </button>
             </div>
 
-            {/* Modal Content */}
             <div className="p-6 sm:p-8">
               <div className="flex items-start justify-between mb-4">
                 <div>
@@ -550,7 +557,6 @@ export default function SereneEscapes() {
                 </div>
               </div>
 
-              {/* Booking Section */}
               <div className="bg-muted p-6 rounded-lg">
                 <h3 className="font-medium text-foreground mb-4">
                   Book Your Stay
