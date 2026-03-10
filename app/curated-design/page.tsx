@@ -19,7 +19,7 @@ const portfolioItems: Portfolio[] = [
     id: 1,
     title: 'Luxury Greeting Cards Collection',
     category: 'Greeting Cards',
-    image: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    image: 'linear-gradient(135deg, #1d4e08 0%, #0a2903 100%)',
     description:
       'Custom-designed greeting cards with premium finishes, metallic accents, and personalized messaging.',
   },
@@ -27,7 +27,7 @@ const portfolioItems: Portfolio[] = [
     id: 2,
     title: 'Corporate Branded Apparel',
     category: 'Customized Shirts',
-    image: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    image: 'linear-gradient(135deg, #2f8f14 0%, #1d4e08 100%)',
     description:
       'High-quality customized shirts featuring company logos, designs, and premium printing.',
   },
@@ -35,7 +35,7 @@ const portfolioItems: Portfolio[] = [
     id: 3,
     title: 'Editorial Magazine Design',
     category: 'Magazines',
-    image: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    image: 'linear-gradient(135deg, #2f8f14 0%, #6fcf4a 100%)',
     description:
       'Bespoke magazine layouts with stunning photography, layouts, and editorial design.',
   },
@@ -43,7 +43,7 @@ const portfolioItems: Portfolio[] = [
     id: 4,
     title: 'Event Prop Designs',
     category: 'Hand Props',
-    image: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+    image: 'linear-gradient(135deg, #2f8f14 0%, #6fcf4a 100%)',
     description:
       'Custom hand props for events, photoshoots, and special occasions with creative flair.',
   },
@@ -51,7 +51,7 @@ const portfolioItems: Portfolio[] = [
     id: 5,
     title: 'Instagram Photo Frame Series',
     category: 'Photo Frames',
-    image: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+    image: 'linear-gradient(135deg, #6fcf4a 0%, #ffffff 100%)',
     description:
       'Aesthetic Instagram photo frames perfect for brand promotion and social media marketing.',
   },
@@ -59,7 +59,7 @@ const portfolioItems: Portfolio[] = [
     id: 6,
     title: 'Premium Wedding Stationery',
     category: 'Greeting Cards',
-    image: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)',
+    image: 'linear-gradient(135deg, #2f8f14 0%, #ffffff 100%)',
     description:
       'Elegant wedding invitations, thank-you cards, and coordinated stationery sets.',
   },
@@ -67,7 +67,7 @@ const portfolioItems: Portfolio[] = [
     id: 7,
     title: 'Fashion Brand Merchandise',
     category: 'Customized Shirts',
-    image: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+    image: 'linear-gradient(135deg, #ffffff 0%, #6fcf4a 100%)',
     description:
       'Limited-edition apparel designs with unique artwork and premium fabric quality.',
   },
@@ -75,7 +75,7 @@ const portfolioItems: Portfolio[] = [
     id: 8,
     title: 'Product Photography Props',
     category: 'Hand Props',
-    image: 'linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%)',
+    image: 'linear-gradient(135deg, #2f8f14 0%, #6fcf4a 100%)',
     description:
       'Custom-designed props to enhance product photography and visual storytelling.',
   },
@@ -101,7 +101,7 @@ export default function CuratedDesignPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-40 bg-[#FF6B35]/95 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-40 bg-[#2f8f14]/95 backdrop-blur-xl border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
           <Link
             href="/"
@@ -117,11 +117,11 @@ export default function CuratedDesignPage() {
         </div>
       </header>
 
-      <div className="relative bg-linear-to-br from-[#b83c0a] via-[#FF6B35] to-[#F7931E] text-white overflow-hidden">
+      <div className="relative bg-linear-to-br from-[#1d4e08] via-[#2f8f14] to-[#6fcf4a] text-white overflow-hidden">
         <div className="absolute inset-0 bg-dot-pattern opacity-100 pointer-events-none" />
         <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -ml-32 -mt-32 blur-3xl animate-float pointer-events-none" />
         <div
-          className="absolute bottom-0 right-0 w-64 h-64 bg-[#b83c0a]/30 rounded-full -mr-20 -mb-20 blur-3xl animate-float pointer-events-none"
+          className="absolute bottom-0 right-0 w-64 h-64 bg-[#1d4e08]/30 rounded-full -mr-20 -mb-20 blur-3xl animate-float pointer-events-none"
           style={{ animationDelay: '2s' }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
@@ -161,8 +161,8 @@ export default function CuratedDesignPage() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
                   selectedCategory === category
-                    ? 'bg-[#FF6B35] text-white shadow-md'
-                    : 'bg-muted text-foreground hover:bg-[#FF6B35]/10 hover:text-[#FF6B35]'
+                    ? 'bg-[#2f8f14] text-white shadow-md'
+                    : 'bg-muted text-foreground hover:bg-[#2f8f14]/10 hover:text-[#2f8f14]'
                 }`}
               >
                 {category}

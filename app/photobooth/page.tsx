@@ -222,7 +222,7 @@ export default function Photobooth() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-40 bg-[#004E89]/95 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-40 bg-[#1d4e08]/95 backdrop-blur-xl border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
           <Link
             href="/"
@@ -238,11 +238,11 @@ export default function Photobooth() {
         </div>
       </header>
 
-      <div className="relative bg-linear-to-br from-[#001f3d] via-[#004E89] to-[#0069b5] text-white overflow-hidden">
+      <div className="relative bg-linear-to-br from-[#0a2903] via-[#1d4e08] to-[#235e0a] text-white overflow-hidden">
         <div className="absolute inset-0 bg-dot-pattern opacity-100 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#6DD5FA]/15 rounded-full -mr-32 -mt-32 blur-3xl animate-float pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#6fcf4a]/15 rounded-full -mr-32 -mt-32 blur-3xl animate-float pointer-events-none" />
         <div
-          className="absolute bottom-0 left-0 w-64 h-64 bg-[#FF6B35]/10 rounded-full -ml-20 -mb-20 blur-3xl animate-float pointer-events-none"
+          className="absolute bottom-0 left-0 w-64 h-64 bg-[#2f8f14]/10 rounded-full -ml-20 -mb-20 blur-3xl animate-float pointer-events-none"
           style={{ animationDelay: '2.5s' }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
@@ -257,7 +257,7 @@ export default function Photobooth() {
               />
             </div>
             <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#6DD5FA] mb-3">
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#6fcf4a] mb-3">
                 Collection 03
               </p>
               <h1 className="text-4xl sm:text-6xl font-black text-white leading-tight">

@@ -289,7 +289,7 @@ export default function SereneEscapesPage() {
 
       <div className="relative bg-linear-to-br from-[#0a2903] via-[#1D4E08] to-[#153805] text-white overflow-hidden">
         <div className="absolute inset-0 bg-dot-pattern opacity-100 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#FF6B35]/15 rounded-full -mr-32 -mt-32 blur-3xl animate-float pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#2f8f14]/15 rounded-full -mr-32 -mt-32 blur-3xl animate-float pointer-events-none" />
         <div
           className="absolute bottom-0 left-0 w-64 h-64 bg-[#6fcf4a]/10 rounded-full -ml-20 -mb-20 blur-3xl animate-float pointer-events-none"
           style={{ animationDelay: '3s' }}

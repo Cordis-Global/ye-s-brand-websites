@@ -27,20 +27,20 @@ export default function HomePage() {
             </Link>
             <Link
               href="/curated-design"
-              className="hover:text-[#FF6B35] transition-colors duration-200"
+              className="hover:text-[#2f8f14] transition-colors duration-200"
             >
               Curated Design
             </Link>
             <Link
               href="/photobooth"
-              className="hover:text-[#6DD5FA] transition-colors duration-200"
+              className="hover:text-[#6fcf4a] transition-colors duration-200"
             >
               Photobooth
             </Link>
           </nav>
           <Link
             href="#brands"
-            className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#FF6B35] hover:bg-[#e55a25] text-white text-sm font-bold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#FF6B35]/30"
+            className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#2f8f14] hover:bg-[#266f10] text-white text-sm font-bold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#2f8f14]/30"
           >
             Explore
             <ArrowRight className="w-3.5 h-3.5" />
@@ -49,13 +49,13 @@ export default function HomePage() {
       </header>
 
       <section className="relative bg-linear-to-br from-[#071a02] via-[#1D4E08] to-[#0a2903] text-white overflow-hidden min-h-[90vh] flex items-center">
-        <div className="absolute top-1/4 left-1/5 w-125 h-125 bg-[#FF6B35]/20 rounded-full blur-[100px] animate-float pointer-events-none" />
+        <div className="absolute top-1/4 left-1/5 w-125 h-125 bg-[#2f8f14]/20 rounded-full blur-[100px] animate-float pointer-events-none" />
         <div
-          className="absolute bottom-1/4 right-1/5 w-100 h-100 bg-[#F7931E]/15 rounded-full blur-[100px] animate-float pointer-events-none"
+          className="absolute bottom-1/4 right-1/5 w-100 h-100 bg-[#6fcf4a]/15 rounded-full blur-[100px] animate-float pointer-events-none"
           style={{ animationDelay: '2s' }}
         />
         <div
-          className="absolute top-1/2 right-0 w-75 h-75 bg-[#004E89]/20 rounded-full blur-[80px] animate-float pointer-events-none"
+          className="absolute top-1/2 right-0 w-75 h-75 bg-[#1d4e08]/20 rounded-full blur-[80px] animate-float pointer-events-none"
           style={{ animationDelay: '4s' }}
         />
 
@@ -63,7 +63,7 @@ export default function HomePage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center w-full">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-10 animate-slide-up">
-            <Sparkles className="w-4 h-4 text-[#F7931E]" />
+            <Sparkles className="w-4 h-4 text-[#6fcf4a]" />
             <span className="text-sm font-semibold text-white/80 tracking-widest uppercase">
               Experience Luxury Redefined
             </span>
@@ -74,7 +74,7 @@ export default function HomePage() {
             style={{ animationDelay: '0.1s' }}
           >
             <span className="block text-white">Brands</span>
-            <span className="block bg-linear-to-r from-[#FF6B35] via-[#F7931E] to-[#FF6B35] bg-clip-text text-transparent animate-gradient">
+            <span className="block bg-linear-to-r from-[#2f8f14] via-[#6fcf4a] to-[#2f8f14] bg-clip-text text-transparent animate-gradient">
               by Ye
             </span>
           </h1>
@@ -93,7 +93,7 @@ export default function HomePage() {
           >
             <Link
               href="#brands"
-              className="group inline-flex items-center gap-2 px-8 py-4 bg-[#FF6B35] hover:bg-[#e55a25] text-white rounded-2xl font-bold text-base transition-all duration-300 hover:shadow-[0_20px_50px_rgba(255,107,53,0.45)] hover:-translate-y-1"
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-[#2f8f14] hover:bg-[#266f10] text-white rounded-2xl font-bold text-base transition-all duration-300 hover:shadow-[0_20px_50px_rgba(47,143,20,0.45)] hover:-translate-y-1"
             >
               Explore Collections
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -112,7 +112,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="bg-[#FF6B35]">
+      <div className="bg-[#2f8f14]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="grid grid-cols-3 gap-4 text-center divide-x divide-white/25">
             {[
@@ -142,13 +142,13 @@ export default function HomePage() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-xs font-black uppercase tracking-[0.25em] text-[#FF6B35] mb-4">
+            <p className="text-xs font-black uppercase tracking-[0.25em] text-[#2f8f14] mb-4">
               Our Brands
             </p>
             <h2 className="text-4xl sm:text-6xl font-black text-foreground leading-tight">
               Three Worlds,
               <br className="hidden sm:block" />{' '}
-              <span className="bg-linear-to-r from-[#1D4E08] to-[#FF6B35] bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-[#1D4E08] to-[#2f8f14] bg-clip-text text-transparent">
                 One Vision
               </span>
             </h2>
@@ -161,7 +161,7 @@ export default function HomePage() {
             >
               <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#1D4E08] via-[#235e0a] to-[#0a2903] p-8 min-h-130 flex flex-col justify-between cursor-pointer transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_40px_80px_rgba(29,78,8,0.55)]">
                 <div className="absolute top-0 right-0 w-72 h-72 bg-[#6fcf4a]/20 rounded-full -mr-24 -mt-24 blur-3xl group-hover:scale-125 transition-transform duration-700" />
-                <div className="absolute bottom-0 left-0 w-44 h-44 bg-[#FF6B35]/10 rounded-full -ml-12 -mb-12 blur-2xl" />
+                <div className="absolute bottom-0 left-0 w-44 h-44 bg-[#2f8f14]/10 rounded-full -ml-12 -mb-12 blur-2xl" />
                 <div className="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none" />
 
                 <div className="relative z-10">
@@ -195,7 +195,7 @@ export default function HomePage() {
                   <span className="text-white font-bold text-sm">
                     Explore Properties
                   </span>
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#FF6B35] group-hover:scale-110 transition-all duration-300">
+                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#2f8f14] group-hover:scale-110 transition-all duration-300">
                     <ArrowRight className="w-4 h-4 text-white" />
                   </div>
                 </div>
@@ -206,8 +206,8 @@ export default function HomePage() {
               href="/curated-design"
               className="group block"
             >
-              <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#FF6B35] via-[#f05520] to-[#b83c0a] p-8 min-h-130 flex flex-col justify-between cursor-pointer transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_40px_80px_rgba(255,107,53,0.55)]">
-                <div className="absolute top-0 left-0 w-72 h-72 bg-[#F7931E]/30 rounded-full -ml-24 -mt-24 blur-3xl group-hover:scale-125 transition-transform duration-700" />
+              <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#2f8f14] via-[#2a7d12] to-[#1d4e08] p-8 min-h-130 flex flex-col justify-between cursor-pointer transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_40px_80px_rgba(47,143,20,0.55)]">
+                <div className="absolute top-0 left-0 w-72 h-72 bg-[#6fcf4a]/30 rounded-full -ml-24 -mt-24 blur-3xl group-hover:scale-125 transition-transform duration-700" />
                 <div className="absolute bottom-0 right-0 w-44 h-44 bg-white/8 rounded-full -mr-12 -mb-12 blur-2xl" />
                 <div className="absolute inset-0 bg-dot-pattern opacity-20 pointer-events-none" />
 
@@ -243,7 +243,7 @@ export default function HomePage() {
                     View Portfolio
                   </span>
                   <div className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center group-hover:bg-white group-hover:scale-110 transition-all duration-300">
-                    <ArrowRight className="w-4 h-4 text-white group-hover:text-[#FF6B35] transition-colors" />
+                    <ArrowRight className="w-4 h-4 text-white group-hover:text-[#2f8f14] transition-colors" />
                   </div>
                 </div>
               </div>
@@ -253,9 +253,9 @@ export default function HomePage() {
               href="/photobooth"
               className="group block"
             >
-              <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#004E89] via-[#00437a] to-[#001f3d] p-8 min-h-130 flex flex-col justify-between cursor-pointer transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_40px_80px_rgba(0,78,137,0.55)]">
-                <div className="absolute top-0 right-0 w-72 h-72 bg-[#6DD5FA]/20 rounded-full -mr-24 -mt-24 blur-3xl group-hover:scale-125 transition-transform duration-700" />
-                <div className="absolute bottom-0 left-0 w-44 h-44 bg-[#FF6B35]/10 rounded-full -ml-12 -mb-12 blur-2xl" />
+              <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#1d4e08] via-[#184107] to-[#0a2903] p-8 min-h-130 flex flex-col justify-between cursor-pointer transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_40px_80px_rgba(29,78,8,0.55)]">
+                <div className="absolute top-0 right-0 w-72 h-72 bg-[#6fcf4a]/20 rounded-full -mr-24 -mt-24 blur-3xl group-hover:scale-125 transition-transform duration-700" />
+                <div className="absolute bottom-0 left-0 w-44 h-44 bg-[#2f8f14]/10 rounded-full -ml-12 -mb-12 blur-2xl" />
                 <div className="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none" />
 
                 <div className="relative z-10">
@@ -276,7 +276,7 @@ export default function HomePage() {
                     <br />
                     booth
                   </h3>
-                  <p className="text-xs font-bold text-[#6DD5FA] uppercase tracking-widest mb-6">
+                  <p className="text-xs font-bold text-[#6fcf4a] uppercase tracking-widest mb-6">
                     by Ye
                   </p>
                   <p className="text-white/55 leading-relaxed text-sm max-w-65">
@@ -287,8 +287,8 @@ export default function HomePage() {
 
                 <div className="relative z-10 flex items-center justify-between pt-6 border-t border-white/15">
                   <span className="text-white font-bold text-sm">Book Now</span>
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#6DD5FA] group-hover:scale-110 transition-all duration-300">
-                    <ArrowRight className="w-4 h-4 text-white group-hover:text-[#001f3d] transition-colors" />
+                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#6fcf4a] group-hover:scale-110 transition-all duration-300">
+                    <ArrowRight className="w-4 h-4 text-white group-hover:text-[#0a2903] transition-colors" />
                   </div>
                 </div>
               </div>
@@ -299,14 +299,14 @@ export default function HomePage() {
 
       <section className="py-24 sm:py-32 bg-linear-to-br from-[#0d2e04] to-[#071a02] relative overflow-hidden">
         <div className="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#FF6B35]/10 rounded-full blur-3xl -mr-32 -mt-32" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#2f8f14]/10 rounded-full blur-3xl -mr-32 -mt-32" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-xs font-black uppercase tracking-[0.25em] text-[#FF6B35] mb-4">
+            <p className="text-xs font-black uppercase tracking-[0.25em] text-[#2f8f14] mb-4">
               Why Choose Us
             </p>
             <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
-              The Brands by Ye <span className="text-[#FF6B35]">Promise</span>
+              The Brands by Ye <span className="text-[#2f8f14]">Promise</span>
             </h2>
             <p className="text-white/40 max-w-lg mx-auto text-sm leading-relaxed">
               Every detail considered, every experience elevated to meet our
@@ -349,12 +349,12 @@ export default function HomePage() {
             ].map((f, i) => (
               <div
                 key={i}
-                className="group p-6 rounded-2xl bg-white/5 border border-white/8 hover:bg-white/10 hover:border-[#FF6B35]/40 transition-all duration-300 hover:-translate-y-1"
+                className="group p-6 rounded-2xl bg-white/5 border border-white/8 hover:bg-white/10 hover:border-[#2f8f14]/40 transition-all duration-300 hover:-translate-y-1"
               >
-                <span className="text-2xl text-[#FF6B35] mb-4 block">
+                <span className="text-2xl text-[#2f8f14] mb-4 block">
                   {f.icon}
                 </span>
-                <h4 className="text-base font-bold text-white mb-2 group-hover:text-[#FF6B35] transition-colors">
+                <h4 className="text-base font-bold text-white mb-2 group-hover:text-[#2f8f14] transition-colors">
                   {f.title}
                 </h4>
                 <p className="text-sm text-white/40 leading-relaxed">
@@ -392,12 +392,12 @@ export default function HomePage() {
                   {
                     label: 'Curated Design',
                     href: '/curated-design',
-                    color: 'hover:text-[#FF6B35]',
+                    color: 'hover:text-[#2f8f14]',
                   },
                   {
                     label: 'Photobooth',
                     href: '/photobooth',
-                    color: 'hover:text-[#6DD5FA]',
+                    color: 'hover:text-[#6fcf4a]',
                   },
                   {
                     label: 'Admin',
