@@ -137,22 +137,23 @@ export default function AdminDashboard() {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-linear-to-br from-background to-muted flex items-center justify-center p-4">
+      <div className="min-h-screen bg-[#f4f4f4] flex items-center justify-center p-6 selection:bg-accent selection:text-black">
         <div className="w-full max-w-md">
-          <div className="bg-card rounded-lg border border-border p-8 shadow-xl">
-            <div className="mb-8">
-              <h1 className="text-3xl font-light text-foreground mb-2">
+           <div className="bg-white border-4 border-black p-10 sm:p-14 shadow-[15px_15px_0px_0px_rgba(44,219,30,1)] relative animate-scale-in">
+             <div className="absolute -top-6 -left-6 w-12 h-12 bg-accent border-r-4 border-b-4 border-black" />
+            <div className="mb-10 text-center">
+              <h1 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter text-black mb-2">
                 Brands by Ye
               </h1>
-              <p className="text-muted-foreground">Admin Dashboard</p>
+              <p className="text-black/60 font-bold uppercase tracking-widest text-sm">Admin Dashboard</p>
             </div>
 
             <form
               onSubmit={handleLogin}
-              className="space-y-4"
+              className="space-y-6"
             >
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
+                <label className="block text-xs font-bold uppercase tracking-widest text-black mb-3">
                   Admin Password
                 </label>
                 <div className="relative">
@@ -163,40 +164,40 @@ export default function AdminDashboard() {
                       setPassword(e.target.value);
                       setAuthError('');
                     }}
-                    className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-                    placeholder="Enter password"
+                    className="w-full px-5 py-4 border-2 border-black bg-white text-black font-medium focus:outline-none focus:ring-0 focus:border-accent transition-colors placeholder:text-black/30 placeholder:font-bold placeholder:tracking-widest"
+                    placeholder="ENTER PASSWORD"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-black/40 hover:text-black transition-colors"
                   >
                     {showPassword ? (
-                      <EyeOff className="w-4 h-4" />
+                      <EyeOff className="w-5 h-5" />
                     ) : (
-                      <Eye className="w-4 h-4" />
+                      <Eye className="w-5 h-5" />
                     )}
                   </button>
                 </div>
               </div>
 
               {authError && (
-                <div className="flex items-center gap-2 text-sm text-destructive bg-destructive/10 p-3 rounded-lg">
-                  <AlertCircle className="w-4 h-4" />
+                <div className="flex items-center gap-3 text-sm text-black bg-red-500 p-4 border-2 border-black font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <AlertCircle className="w-5 h-5 shrink-0" />
                   {authError}
                 </div>
               )}
 
               <button
                 type="submit"
-                className="w-full py-3 bg-accent text-accent-foreground rounded-lg font-medium hover:bg-accent/90 transition-colors"
+                className="w-full py-5 mt-4 bg-black text-white font-black uppercase tracking-widest border-2 border-transparent hover:bg-accent hover:text-black hover:border-black transition-colors"
               >
-                Login
+                Login to Dashboard
               </button>
             </form>
 
-            <div className="mt-6 pt-6 border-t border-border">
-              <p className="text-xs text-muted-foreground text-center">
+            <div className="mt-8 pt-8 border-t-2 border-black/10 text-center">
+              <p className="text-xs font-bold uppercase tracking-widest text-black/40">
                 Demo password: YeBrands2024
               </p>
             </div>
@@ -207,27 +208,27 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+    <div className="min-h-screen bg-[#f9f9f9] text-black selection:bg-accent selection:text-black">
+      <header className="border-b-4 border-black sticky top-0 bg-white z-40">
+        <div className="max-w-screen-2xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-light text-foreground">
+            <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-black">
               Dashboard
             </h1>
-            <p className="text-sm text-muted-foreground mt-0.5">
+            <p className="text-sm font-bold text-black/50 uppercase tracking-widest mt-1">
               Manage all your bookings
             </p>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
             <Link
               href="/"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-bold uppercase tracking-widest text-black/50 hover:text-accent transition-colors hidden sm:block"
             >
               Back to Site
             </Link>
             <button
               onClick={handleLogout}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-foreground hover:bg-muted transition-colors text-sm font-medium"
+              className="flex items-center gap-2 px-6 py-3 border-2 border-black bg-black text-white hover:bg-accent hover:text-black transition-colors text-sm font-black uppercase tracking-widest"
             >
               <LogOut className="w-4 h-4" />
               Logout
@@ -236,171 +237,173 @@ export default function AdminDashboard() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
-          <div className="bg-card border border-border rounded-lg p-6">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-muted-foreground">
+      <main className="max-w-screen-2xl mx-auto px-6 py-12 sm:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
+          <div className="bg-white border-4 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(44,219,30,1)] hover:-translate-y-1 transition-transform">
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-xs font-bold uppercase tracking-widest text-black/60">
                 Total Bookings
               </span>
-              <BarChart3 className="w-4 h-4 text-accent" />
+              <BarChart3 className="w-5 h-5 text-black" />
             </div>
-            <p className="text-3xl font-light text-foreground">
+            <p className="text-5xl font-black uppercase tracking-tighter text-black">
               {stats.totalBookings}
             </p>
           </div>
 
-          <div className="bg-card border border-border rounded-lg p-6">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-muted-foreground">Photobooth</span>
-              <Camera className="w-4 h-4 text-accent" />
+          <div className="bg-white border-4 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-xs font-bold uppercase tracking-widest text-black/60">Photobooth</span>
+              <Camera className="w-5 h-5 text-black" />
             </div>
-            <p className="text-3xl font-light text-foreground">
+            <p className="text-5xl font-black uppercase tracking-tighter text-black">
               {stats.photobooth}
             </p>
           </div>
 
-          <div className="bg-card border border-border rounded-lg p-6">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-muted-foreground">
+          <div className="bg-white border-4 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-xs font-bold uppercase tracking-widest text-black/60">
                 Serene Escapes
               </span>
-              <MapPin className="w-4 h-4 text-accent" />
+              <MapPin className="w-5 h-5 text-black" />
             </div>
-            <p className="text-3xl font-light text-foreground">
+            <p className="text-5xl font-black uppercase tracking-tighter text-black">
               {stats.sereneEscapes}
             </p>
           </div>
 
-          <div className="bg-card border border-border rounded-lg p-6">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-muted-foreground">
+          <div className="bg-white border-4 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-xs font-bold uppercase tracking-widest text-black/60">
                 Design Orders
               </span>
-              <TrendingUp className="w-4 h-4 text-accent" />
+              <TrendingUp className="w-5 h-5 text-black" />
             </div>
-            <p className="text-3xl font-light text-foreground">
+            <p className="text-5xl font-black uppercase tracking-tighter text-black">
               {stats.design}
             </p>
           </div>
 
-          <div className="bg-card border border-border rounded-lg p-6">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-muted-foreground">Revenue</span>
-              <DollarSign className="w-4 h-4 text-accent" />
+          <div className="bg-white border-4 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(44,219,30,1)] hover:-translate-y-1 transition-transform">
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-xs font-bold uppercase tracking-widest text-black/60">Revenue</span>
+              <DollarSign className="w-5 h-5 text-black" />
             </div>
-            <p className="text-3xl font-light text-foreground">
+            <p className="text-4xl font-black uppercase tracking-tighter text-accent bg-black px-2 inline-block">
               ${stats.revenue}
             </p>
           </div>
         </div>
 
-        <div className="mb-8 flex flex-col sm:flex-row gap-4">
-          <div>
-            <label className="block text-sm font-medium text-foreground mb-2">
-              Filter by Service
-            </label>
-            <div className="flex gap-2 flex-wrap">
-              {(['all', 'photobooth', 'serene', 'design'] as const).map(
-                (filter) => (
-                  <button
-                    key={filter}
-                    onClick={() => setSelectedFilter(filter)}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                      selectedFilter === filter
-                        ? 'bg-accent text-accent-foreground'
-                        : 'bg-muted text-foreground hover:bg-muted/80'
-                    }`}
-                  >
-                    {filter === 'all'
-                      ? 'All Services'
-                      : filter === 'photobooth'
-                        ? 'Photobooth'
-                        : filter === 'serene'
-                          ? 'Serene Escapes'
-                          : 'Design'}
-                  </button>
-                ),
-              )}
-            </div>
-          </div>
+        <div className="mb-10 flex flex-col lg:flex-row gap-8 items-start lg:items-end justify-between border-b-4 border-black pb-8">
+            <div className="flex flex-col gap-6">
+                <div>
+                    <label className="block text-xs font-black uppercase tracking-[0.2em] text-black mb-3">
+                    Filter by Service
+                    </label>
+                    <div className="flex gap-3 flex-wrap">
+                    {(['all', 'photobooth', 'serene', 'design'] as const).map(
+                        (filter) => (
+                        <button
+                            key={filter}
+                            onClick={() => setSelectedFilter(filter)}
+                            className={`px-6 py-3 border-2 font-bold uppercase tracking-wider text-xs transition-all ${
+                            selectedFilter === filter
+                                ? 'bg-black text-white border-black shadow-[4px_4px_0px_0px_rgba(44,219,30,1)]'
+                                : 'bg-white text-black border-black/20 hover:border-black'
+                            }`}
+                        >
+                            {filter === 'all'
+                            ? 'All Services'
+                            : filter === 'photobooth'
+                                ? 'Photobooth'
+                                : filter === 'serene'
+                                ? 'Serene Escapes'
+                                : 'Design'}
+                        </button>
+                        ),
+                    )}
+                    </div>
+                </div>
 
-          <div>
-            <label className="block text-sm font-medium text-foreground mb-2">
-              Filter by Status
-            </label>
-            <div className="flex gap-2 flex-wrap">
-              {(['all', 'pending', 'confirmed', 'completed'] as const).map(
-                (status) => (
-                  <button
-                    key={status}
-                    onClick={() => setStatusFilter(status)}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                      statusFilter === status
-                        ? 'bg-accent text-accent-foreground'
-                        : 'bg-muted text-foreground hover:bg-muted/80'
-                    }`}
-                  >
-                    {status === 'all'
-                      ? 'All Status'
-                      : status.charAt(0).toUpperCase() + status.slice(1)}
-                  </button>
-                ),
-              )}
+                <div>
+                    <label className="block text-xs font-black uppercase tracking-[0.2em] text-black mb-3">
+                    Filter by Status
+                    </label>
+                    <div className="flex gap-3 flex-wrap">
+                    {(['all', 'pending', 'confirmed', 'completed'] as const).map(
+                        (status) => (
+                        <button
+                            key={status}
+                            onClick={() => setStatusFilter(status)}
+                            className={`px-6 py-3 border-2 font-bold uppercase tracking-wider text-xs transition-all ${
+                            statusFilter === status
+                                ? 'bg-black text-white border-black shadow-[4px_4px_0px_0px_rgba(44,219,30,1)]'
+                                : 'bg-white text-black border-black/20 hover:border-black'
+                            }`}
+                        >
+                            {status === 'all'
+                            ? 'All Status'
+                            : status.charAt(0).toUpperCase() + status.slice(1)}
+                        </button>
+                        ),
+                    )}
+                    </div>
+                </div>
             </div>
-          </div>
 
-          <div className="flex items-end">
-            <button className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-foreground hover:bg-muted transition-colors font-medium text-sm">
-              <Download className="w-4 h-4" />
-              Export
+          <div className="shrink-0 mt-6 lg:mt-0">
+            <button className="flex items-center justify-center gap-3 px-8 py-4 bg-accent text-black font-black uppercase tracking-widest border-2 border-transparent hover:bg-black hover:text-white hover:border-black transition-all">
+              <Download className="w-5 h-5" />
+              Export Data
             </button>
           </div>
         </div>
 
-        <div className="bg-card border border-border rounded-lg overflow-hidden">
+        <div className="bg-white border-4 border-black overflow-hidden shadow-[15px_15px_0px_0px_rgba(0,0,0,1)]">
           <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead className="border-b border-border bg-muted/50">
+            <table className="w-full text-left border-collapse">
+              <thead className="bg-[#f0f0f0] border-b-4 border-black">
                 <tr>
-                  <th className="px-6 py-4 text-left text-sm font-medium text-foreground">
+                  <th className="px-6 py-5 text-sm font-black uppercase tracking-widest text-black border-r-2 border-black/10">
                     Client
                   </th>
-                  <th className="px-6 py-4 text-left text-sm font-medium text-foreground">
+                  <th className="px-6 py-5 text-sm font-black uppercase tracking-widest text-black border-r-2 border-black/10">
                     Service
                   </th>
-                  <th className="px-6 py-4 text-left text-sm font-medium text-foreground">
+                  <th className="px-6 py-5 text-sm font-black uppercase tracking-widest text-black border-r-2 border-black/10">
                     Date
                   </th>
-                  <th className="px-6 py-4 text-left text-sm font-medium text-foreground">
+                  <th className="px-6 py-5 text-sm font-black uppercase tracking-widest text-black border-r-2 border-black/10">
                     Details
                   </th>
-                  <th className="px-6 py-4 text-left text-sm font-medium text-foreground">
+                  <th className="px-6 py-5 text-sm font-black uppercase tracking-widest text-black border-r-2 border-black/10">
                     Status
                   </th>
-                  <th className="px-6 py-4 text-left text-sm font-medium text-foreground">
+                  <th className="px-6 py-5 text-sm font-black uppercase tracking-widest text-black">
                     Amount
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-border">
+              <tbody className="divide-y-2 divide-black/10">
                 {filteredBookings.map((booking) => (
                   <tr
                     key={booking.id}
-                    className="hover:bg-muted/50 transition-colors"
+                    className="hover:bg-black/5 transition-colors group cursor-default"
                   >
-                    <td className="px-6 py-4">
+                    <td className="px-6 py-5 border-r-2 border-black/10">
                       <div>
-                        <p className="text-sm font-medium text-foreground">
+                        <p className="text-lg font-black uppercase tracking-tighter text-black mb-1">
                           {booking.clientName}
                         </p>
-                        <p className="text-xs text-muted-foreground">
+                        <p className="text-xs font-bold uppercase tracking-widest text-black/50">
                           {booking.clientEmail}
                         </p>
                       </div>
                     </td>
-                    <td className="px-6 py-4 text-sm text-foreground">
-                      <span className="inline-block px-2 py-1 bg-muted rounded text-xs font-medium">
+                    <td className="px-6 py-5 border-r-2 border-black/10">
+                      <span className="inline-block px-3 py-1 bg-black text-white font-bold uppercase tracking-widest text-xs">
                         {booking.type === 'photobooth'
                           ? 'Photobooth'
                           : booking.type === 'serene'
@@ -408,44 +411,50 @@ export default function AdminDashboard() {
                             : 'Design'}
                       </span>
                     </td>
-                    <td className="px-6 py-4 text-sm text-foreground">
+                    <td className="px-6 py-5 font-bold uppercase tracking-widest text-sm text-black/80 border-r-2 border-black/10">
                       {new Date(booking.date).toLocaleDateString('en-US', {
                         month: 'short',
                         day: 'numeric',
                         year: 'numeric',
                       })}
                     </td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">
+                    <td className="px-6 py-5 text-sm font-medium text-black border-r-2 border-black/10 max-w-[200px] truncate">
                       {booking.details}
                     </td>
-                    <td className="px-6 py-4">
+                    <td className="px-6 py-5 border-r-2 border-black/10">
                       <div className="flex items-center gap-2">
                         {booking.status === 'completed' ? (
-                          <>
-                            <CheckCircle2 className="w-4 h-4 text-green-600" />
-                            <span className="text-sm font-medium text-green-600">
+                          <div className="flex items-center gap-2 bg-[#dcfce7] text-[#166534] px-3 py-2 border-2 border-[#166534]">
+                            <CheckCircle2 className="w-5 h-5 shrink-0" />
+                            <span className="text-xs font-black uppercase tracking-widest">
                               Completed
                             </span>
-                          </>
+                          </div>
                         ) : booking.status === 'confirmed' ? (
-                          <>
-                            <CheckCircle2 className="w-4 h-4 text-accent" />
-                            <span className="text-sm font-medium text-accent">
+                           <div className="flex items-center gap-2 bg-accent/20 text-black px-3 py-2 border-2 border-black">
+                            <CheckCircle2 className="w-5 h-5 shrink-0 text-accent" />
+                            <span className="text-xs font-black uppercase tracking-widest">
                               Confirmed
                             </span>
-                          </>
+                          </div>
                         ) : (
-                          <>
-                            <Clock className="w-4 h-4 text-yellow-600" />
-                            <span className="text-sm font-medium text-yellow-600">
+                          <div className="flex items-center gap-2 bg-[#fef08a] text-[#854d0e] px-3 py-2 border-2 border-[#854d0e]">
+                            <Clock className="w-5 h-5 shrink-0" />
+                            <span className="text-xs font-black uppercase tracking-widest">
                               Pending
                             </span>
-                          </>
+                          </div>
                         )}
                       </div>
                     </td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">
-                      {booking.amount ? `$${booking.amount}` : '-'}
+                    <td className="px-6 py-5 border-r-2 border-black/10 last:border-0">
+                        {booking.amount ? (
+                            <span className="text-xl font-black text-black">
+                                ${booking.amount}
+                            </span>
+                        ) : (
+                            <span className="text-xl font-black text-black/30">-</span>
+                        )}
                     </td>
                   </tr>
                 ))}
@@ -454,9 +463,9 @@ export default function AdminDashboard() {
           </div>
 
           {filteredBookings.length === 0 && (
-            <div className="p-12 text-center">
-              <AlertCircle className="w-8 h-8 text-muted-foreground mx-auto mb-3" />
-              <p className="text-muted-foreground">
+            <div className="p-20 text-center bg-white border-t-2 border-black/10">
+              <AlertCircle className="w-16 h-16 text-black/20 mx-auto mb-6" />
+              <p className="text-xl font-black uppercase tracking-tight text-black/40">
                 No bookings found with the selected filters
               </p>
             </div>

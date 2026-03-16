@@ -1,9 +1,13 @@
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
+import { Inter, Outfit } from 'next/font/google';
 
 import React from 'react';
 
 import './globals.css';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
 
 export const metadata: Metadata = {
   title: 'Brands by Ye',
@@ -36,7 +40,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body
+        className={`${inter.variable} ${outfit.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

@@ -270,73 +270,69 @@ export default function SereneEscapesPage() {
       : properties.filter((p) => p.guests >= parseInt(guestCount));
 
   return (
-    <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-40 bg-[#1D4E08]/95 backdrop-blur-xl border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+    <div className="min-h-screen bg-white text-black selection:bg-accent selection:text-black">
+      <header className="sticky top-0 z-40 bg-black text-white border-b-2 border-white/10 backdrop-blur-md">
+        <div className="max-w-screen-2xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm font-semibold"
+            className="inline-flex items-center gap-2 hover:text-accent transition-colors font-bold uppercase tracking-widest text-sm"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-5 h-5" />
             Back
           </Link>
-          <span className="text-sm font-black text-white tracking-tight">
-            Serene Escapes
+          <span className="text-xl font-black uppercase tracking-tighter hidden sm:block text-accent">
+            Brands by Ye
           </span>
-          <div className="w-16" />
+          <div className="w-16 sm:w-24" />
         </div>
       </header>
 
-      <div className="relative bg-linear-to-br from-[#0a2903] via-[#1D4E08] to-[#153805] text-white overflow-hidden">
-        <div className="absolute inset-0 bg-dot-pattern opacity-100 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#2f8f14]/15 rounded-full -mr-32 -mt-32 blur-3xl animate-float pointer-events-none" />
-        <div
-          className="absolute bottom-0 left-0 w-64 h-64 bg-[#6fcf4a]/10 rounded-full -ml-20 -mb-20 blur-3xl animate-float pointer-events-none"
-          style={{ animationDelay: '3s' }}
-        />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <div className="shrink-0 p-3 bg-white rounded-2xl shadow-2xl">
+      <div className="relative bg-black text-white border-b-2 border-white/10 overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-50 pointer-events-none" />
+        <div className="relative max-w-screen-2xl mx-auto px-6 py-24 sm:py-32">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 sm:gap-12 animate-slide-up">
+            <div className="shrink-0 p-6 bg-white shadow-2xl">
               <Image
-                src="/icons/serene-black.jpeg"
+                src="/icons/serene-white.jpeg"
                 alt="Serene Escapes"
-                width={72}
-                height={72}
+                width={120}
+                height={120}
                 className="object-contain"
               />
             </div>
-            <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#6fcf4a] mb-3">
+            <div className="text-center sm:text-left">
+              <p className="text-xs font-black uppercase tracking-[0.4em] text-accent mb-4">
                 Collection 01
               </p>
-              <h1 className="text-4xl sm:text-6xl font-black text-white leading-tight">
-                Serene Escapes
+              <h1 className="text-6xl sm:text-8xl md:text-9xl font-black text-white uppercase tracking-tighter leading-none mb-6">
+                Serene<br/>Escapes
               </h1>
-              <p className="text-white/45 text-base font-light mt-1">by Ye</p>
-              <p className="text-white/55 mt-3 max-w-lg text-sm leading-relaxed">
-                Discover curated luxury vacation rentals. Experience tranquility
-                in handpicked homes designed for the discerning traveler.
+              <p className="text-white/60 text-lg font-medium leading-relaxed max-w-2xl border-l-4 border-accent pl-6 text-left hidden sm:block">
+                Discover curated luxury vacation rentals. Experience tranquility in handpicked homes designed for the discerning traveler.
+              </p>
+              <p className="text-white/60 text-base font-medium leading-relaxed max-w-md mx-auto sm:hidden">
+                 Discover curated luxury vacation rentals. Experience tranquility in handpicked homes designed for the discerning traveler.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="border-b border-border bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-            <h3 className="text-sm font-bold text-foreground">
+      <div className="border-b-2 border-black/10 bg-white sticky top-20 z-30">
+        <div className="max-w-screen-2xl mx-auto px-6 py-6">
+          <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center justify-between">
+            <h3 className="text-sm font-black uppercase tracking-widest text-black">
               Filter by Guest Capacity
             </h3>
-            <div className="flex gap-2 flex-wrap">
+            <div className="flex gap-3 flex-wrap">
               {['all', '4', '6', '8', '10'].map((count) => (
                 <button
                   key={count}
                   onClick={() => setGuestCount(count)}
-                  className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
+                  className={`px-6 py-3 border-2 font-bold uppercase tracking-wider text-xs transition-colors btn-capsule ${
                     guestCount === count
-                      ? 'bg-[#1D4E08] text-white shadow-md'
-                      : 'bg-muted text-foreground hover:bg-[#1D4E08]/10 hover:text-[#1D4E08]'
+                      ? 'bg-black text-white border-black shadow-lg rounded-none' /* Using rounded-none for a sharper look here, overriding btn-capsule */
+                      : 'bg-white text-black border-black/20 hover:border-black rounded-none' 
                   }`}
                 >
                   {count === 'all' ? 'All Properties' : `${count}+ Guests`}
@@ -347,74 +343,63 @@ export default function SereneEscapesPage() {
         </div>
       </div>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-6">
-          <p className="text-muted-foreground">
-            Showing {filteredProperties.length} of {properties.length}{' '}
-            properties
+      <section className="max-w-screen-2xl mx-auto px-6 py-20 pb-32">
+        <div className="mb-12 flex justify-between items-end border-b-2 border-black/10 pb-4">
+          <p className="text-black/60 font-bold uppercase tracking-widest text-sm">
+            Showing {filteredProperties.length} of {properties.length} properties
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {filteredProperties.map((property) => (
             <div
               key={property.id}
-              className="group cursor-pointer rounded-lg overflow-hidden border border-border hover:shadow-xl transition-all duration-300"
+              className="group cursor-pointer border-2 border-black hover:-translate-y-2 hover:shadow-[10px_10px_0px_0px_rgba(44,219,30,1)] transition-all bg-white flex flex-col h-full duration-300"
               onClick={() => setSelectedProperty(property)}
             >
               <div
-                className="w-full h-64 relative overflow-hidden bg-cover bg-center"
+                className="w-full h-80 relative overflow-hidden bg-cover bg-center border-b-2 border-black"
                 style={{ backgroundImage: `url(${property.images[0]})` }}
-              ></div>
-              <div className="p-4 sm:p-6 bg-card">
-                <h3 className="text-lg font-medium text-foreground mb-2 text-balance">
+              >
+                  <div className="absolute top-4 right-4 bg-white text-black px-4 py-2 font-black text-xl border-2 border-black">
+                     ₵{property.price}<span className="text-xs text-black/60 uppercase tracking-widest ml-1">/night</span>
+                  </div>
+              </div>
+              <div className="p-8 flex flex-col flex-1">
+                <div className="flex items-center text-accent text-xs font-bold uppercase tracking-widest mb-3">
+                  <MapPin className="w-4 h-4 mr-1 text-black" />
+                  {property.location}
+                </div>
+                
+                <h3 className="text-3xl font-black uppercase tracking-tighter leading-tight text-black mb-4">
                   {property.name}
                 </h3>
 
-                <div className="flex items-center text-muted-foreground text-sm mb-4">
-                  <MapPin className="w-4 h-4 mr-1" />
-                  {property.location}
-                </div>
-
-                <div className="flex gap-4 mb-4 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-1">
-                    <Users className="w-4 h-4" />
+                <div className="flex gap-6 mb-6 pb-6 border-b-2 border-black/10 text-sm font-bold uppercase text-black/60 tracking-wider">
+                  <div className="flex items-center gap-2">
+                    <Users className="w-5 h-5 text-black" />
                     {property.guests} guests
                   </div>
                 </div>
 
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                <p className="text-black/70 font-medium leading-relaxed mb-8 flex-1">
                   {property.description}
                 </p>
 
-                <div className="flex flex-wrap gap-1 mb-4">
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {property.amenities.slice(0, 3).map((amenity) => (
                     <span
                       key={amenity}
-                      className="inline-block px-2.5 py-1 text-xs bg-muted text-foreground rounded"
+                      className="inline-block px-3 py-1.5 text-xs font-bold uppercase tracking-widest bg-black/5 text-black border border-black/10"
                     >
                       {amenity}
                     </span>
                   ))}
                   {property.amenities.length > 3 && (
-                    <span className="inline-block px-2.5 py-1 text-xs text-accent font-medium">
+                    <span className="inline-block px-3 py-1.5 text-xs font-bold uppercase tracking-widest bg-accent text-black border border-black/10">
                       +{property.amenities.length - 3} more
                     </span>
                   )}
-                </div>
-
-                <div className="flex items-baseline justify-between pt-4 border-t border-border">
-                  <div>
-                    <span className="text-2xl font-light text-foreground">
-                      ₵{property.price}
-                    </span>
-                    <span className="text-muted-foreground text-sm ml-2">
-                      /night
-                    </span>
-                  </div>
-                  <button className="text-accent hover:text-accent/80 transition-colors font-medium text-sm">
-                    Learn More
-                  </button>
                 </div>
               </div>
             </div>
@@ -424,241 +409,204 @@ export default function SereneEscapesPage() {
 
       {selectedProperty && (
         <div
-          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 sm:p-10 backdrop-blur-sm"
           onClick={() => setSelectedProperty(null)}
         >
           <div
-            className="bg-card rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white max-w-6xl w-full max-h-[90vh] overflow-y-auto border-4 border-black shadow-[15px_15px_0px_0px_rgba(44,219,30,1)] animate-scale-in"
             onClick={(e) => e.stopPropagation()}
           >
-            <div
-              className="relative w-full h-80 bg-cover bg-center group"
-              style={{
-                backgroundImage: `url(${selectedProperty.images[currentImageIndex]})`,
-              }}
-            >
-              {selectedProperty.images.length > 1 && (
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setCurrentImageIndex((prev) =>
-                      prev === 0
-                        ? selectedProperty.images.length - 1
-                        : prev - 1,
-                    );
-                  }}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background backdrop-blur p-2 rounded-full transition-colors z-10"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-              )}
-
-              {selectedProperty.images.length > 1 && (
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setCurrentImageIndex((prev) =>
-                      prev === selectedProperty.images.length - 1
-                        ? 0
-                        : prev + 1,
-                    );
-                  }}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background backdrop-blur p-2 rounded-full transition-colors z-10"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-              )}
-
-              {selectedProperty.images.length > 1 && (
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-background/80 backdrop-blur px-3 py-1 rounded-full text-sm font-medium">
-                  {currentImageIndex + 1} / {selectedProperty.images.length}
-                </div>
-              )}
-
-              <button
-                onClick={() => {
-                  setSelectedProperty(null);
-                  setCurrentImageIndex(0);
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+                <div
+                className="relative w-full h-96 lg:h-full min-h-[400px] bg-cover bg-center border-b-4 lg:border-b-0 lg:border-r-4 border-black"
+                style={{
+                    backgroundImage: `url(${selectedProperty.images[currentImageIndex]})`,
                 }}
-                className="absolute top-4 right-4 bg-background/90 backdrop-blur p-2 rounded-full hover:bg-background transition-colors"
-              >
-                <span className="sr-only">Close</span>
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-
-            <div className="p-6 sm:p-8">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h2 className="text-2xl sm:text-3xl font-light text-foreground mb-2">
-                    {selectedProperty.name}
-                  </h2>
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 fill-accent text-accent" />
-                      {selectedProperty.rating} ({selectedProperty.reviews}{' '}
-                      reviews)
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <MapPin className="w-4 h-4" />
-                      {selectedProperty.location}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <p className="text-foreground mb-6 leading-relaxed">
-                {selectedProperty.description}
-              </p>
-
-              <div className="grid grid-cols-2 gap-4 mb-6 pb-6 border-b border-border">
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">
-                    Guest Capacity
-                  </p>
-                  <p className="text-lg font-medium text-foreground">
-                    {selectedProperty.guests} guests
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">
-                    Price per Night
-                  </p>
-                  <p className="text-lg font-medium text-foreground">
-                    ₵{selectedProperty.price}
-                  </p>
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <h3 className="font-medium text-foreground mb-3">Amenities</h3>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProperty.amenities.map((amenity) => (
-                    <span
-                      key={amenity}
-                      className="inline-flex items-center gap-2 px-3 py-2 bg-muted text-foreground rounded text-sm"
+                {selectedProperty.images.length > 1 && (
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setCurrentImageIndex((prev) =>
+                            prev === 0 ? selectedProperty.images.length - 1 : prev - 1
+                            );
+                        }}
+                        className="absolute left-6 top-1/2 -translate-y-1/2 bg-white text-black border-2 border-black hover:bg-accent p-3 transition-colors z-10"
                     >
-                      <Wifi className="w-4 h-4" />
-                      {amenity}
-                    </span>
-                  ))}
+                    <ChevronLeft className="w-6 h-6" />
+                    </button>
+                )}
+
+                {selectedProperty.images.length > 1 && (
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setCurrentImageIndex((prev) =>
+                            prev === selectedProperty.images.length - 1 ? 0 : prev + 1
+                            );
+                        }}
+                        className="absolute right-6 top-1/2 -translate-y-1/2 bg-white text-black border-2 border-black hover:bg-accent p-3 transition-colors z-10"
+                    >
+                    <ChevronRight className="w-6 h-6" />
+                    </button>
+                )}
+
+                {selectedProperty.images.length > 1 && (
+                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black text-white px-6 py-2 text-sm font-bold uppercase tracking-widest border border-white/20">
+                    {currentImageIndex + 1} / {selectedProperty.images.length}
+                    </div>
+                )}
                 </div>
-              </div>
 
-              <div className="bg-muted p-6 rounded-lg">
-                <h3 className="font-medium text-foreground mb-4">
-                  Book Your Stay
-                </h3>
+                <div className="p-8 sm:p-12 flex flex-col relative bg-[#f9f9f9]">
+                    <button
+                        onClick={() => {
+                        setSelectedProperty(null);
+                        setCurrentImageIndex(0);
+                        }}
+                        className="absolute top-6 right-6 bg-black text-white hover:bg-accent hover:text-black p-2 border-2 border-transparent hover:border-black transition-colors z-20"
+                    >
+                        <span className="sr-only">Close</span>
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
 
-                <div className="space-y-4">
-                  <div>
-                    <label className="text-sm text-muted-foreground block mb-2">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      value={bookingEmail}
-                      onChange={(e) => setBookingEmail(e.target.value)}
-                      placeholder="your@email.com"
-                      className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-sm text-muted-foreground block mb-2">
-                        Check-in Date
-                      </label>
-                      <input
-                        type="date"
-                        value={checkInDate}
-                        onChange={(e) => setCheckInDate(e.target.value)}
-                        className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-                      />
+                    <p className="text-xs font-black uppercase tracking-[0.3em] text-accent mb-4 mt-2">
+                        {selectedProperty.location}
+                    </p>
+                    <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter text-black mb-6 leading-none">
+                        {selectedProperty.name}
+                    </h2>
+                    
+                    <div className="flex items-center gap-6 text-sm font-bold uppercase tracking-widest text-black/60 mb-8 pb-8 border-b-2 border-black/10">
+                        <div className="flex items-center gap-2 text-black">
+                            <Star className="w-5 h-5 fill-accent text-accent" />
+                            {selectedProperty.rating} <span className="text-black/50">({selectedProperty.reviews} reviews)</span>
+                        </div>
                     </div>
-                    <div>
-                      <label className="text-sm text-muted-foreground block mb-2">
-                        Check-out Date
-                      </label>
-                      <input
-                        type="date"
-                        value={checkOutDate}
-                        onChange={(e) => setCheckOutDate(e.target.value)}
-                        className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-                      />
+
+                    <p className="text-black/80 mb-10 text-lg font-medium leading-relaxed">
+                        {selectedProperty.description}
+                    </p>
+
+                    <div className="grid grid-cols-2 gap-8 mb-10">
+                        <div>
+                        <p className="text-xs font-bold uppercase tracking-widest text-black/50 mb-2">
+                            Guest Capacity
+                        </p>
+                        <p className="text-xl font-black text-black flex items-center gap-2">
+                            <Users className="w-5 h-5 text-accent"/> {selectedProperty.guests} guests
+                        </p>
+                        </div>
+                        <div>
+                        <p className="text-xs font-bold uppercase tracking-widest text-black/50 mb-2">
+                            Price per Night
+                        </p>
+                        <p className="text-3xl font-black text-black">
+                            ₵{selectedProperty.price}
+                        </p>
+                        </div>
                     </div>
-                  </div>
 
-                  {numberOfNights > 0 && (
-                    <div className="bg-background p-4 rounded-lg border border-border space-y-3">
-                      <div className="flex justify-between">
-                        <span className="text-sm text-muted-foreground">
-                          Number of Nights:
-                        </span>
-                        <span className="text-foreground font-medium">
-                          {numberOfNights}
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-sm text-muted-foreground">
-                          Room (₵{selectedProperty.price}/night):
-                        </span>
-                        <span className="text-foreground font-medium">
-                          ₵{selectedProperty.price * numberOfNights}
-                        </span>
-                      </div>
-                      <div className="border-t border-border pt-3 flex justify-between">
-                        <span className="text-sm text-muted-foreground">
-                          Security Deposit{' '}
-                          {numberOfNights < 7 ? '(< 7 nights)' : '(≥ 7 nights)'}
-                          :
-                        </span>
-                        <span className="text-foreground font-medium">
-                          ₵{securityDeposit}
-                        </span>
-                      </div>
-                      <p className="text-xs text-muted-foreground italic">
-                        * Security deposit is fully refundable if property has
-                        no damages
-                      </p>
-                      <div className="border-t border-border pt-3 flex justify-between">
-                        <span className="text-foreground font-semibold">
-                          Total Amount:
-                        </span>
-                        <span className="text-lg font-bold text-accent">
-                          ₵
-                          {selectedProperty.price * numberOfNights +
-                            securityDeposit}
-                        </span>
-                      </div>
+                    <div className="mb-12 pb-12 border-b-2 border-black/10">
+                        <h3 className="text-sm font-bold uppercase tracking-widest text-black/50 mb-4">Amenities</h3>
+                        <div className="flex flex-wrap gap-3">
+                        {selectedProperty.amenities.map((amenity) => (
+                            <span
+                            key={amenity}
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black border-2 border-black font-bold text-xs uppercase tracking-wider"
+                            >
+                            <Wifi className="w-4 h-4 text-accent" />
+                            {amenity}
+                            </span>
+                        ))}
+                        </div>
                     </div>
-                  )}
 
-                  <button
-                    onClick={handlePaystackPayment}
-                    disabled={isProcessing || numberOfNights <= 0}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-lg font-medium hover:bg-accent/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isProcessing ? 'Processing...' : 'Make Payment'}
-                  </button>
+                    <div className="bg-white p-8 border-4 border-black relative">
+                        <div className="absolute -top-4 -left-4 w-8 h-8 bg-accent border-r-4 border-b-4 border-black" />
+                        <h3 className="text-2xl font-black uppercase tracking-tight text-black mb-8">
+                        Book Your Stay
+                        </h3>
 
-                  <p className="text-xs text-muted-foreground text-center">
-                    Secure payment powered by Paystack
-                  </p>
+                        <div className="space-y-6">
+                        <div>
+                            <label className="text-xs font-bold uppercase tracking-widest text-black mb-3 block">
+                            Email Address
+                            </label>
+                            <input
+                            type="email"
+                            value={bookingEmail}
+                            onChange={(e) => setBookingEmail(e.target.value)}
+                            placeholder="HELLO@EXAMPLE.COM"
+                            className="w-full px-5 py-4 border-2 border-black bg-white text-black font-medium focus:outline-none focus:ring-0 focus:border-accent transition-colors placeholder:text-black/30 placeholder:font-bold placeholder:tracking-widest"
+                            />
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                            <label className="text-xs font-bold uppercase tracking-widest text-black mb-3 block">
+                                Check-in Date
+                            </label>
+                            <input
+                                type="date"
+                                value={checkInDate}
+                                onChange={(e) => setCheckInDate(e.target.value)}
+                                className="w-full px-4 py-4 border-2 border-black bg-white text-black font-bold uppercase focus:outline-none focus:ring-0 focus:border-accent"
+                            />
+                            </div>
+                            <div>
+                            <label className="text-xs font-bold uppercase tracking-widest text-black mb-3 block">
+                                Check-out Date
+                            </label>
+                            <input
+                                type="date"
+                                value={checkOutDate}
+                                onChange={(e) => setCheckOutDate(e.target.value)}
+                                className="w-full px-4 py-4 border-2 border-black bg-white text-black font-bold uppercase focus:outline-none focus:ring-0 focus:border-accent"
+                            />
+                            </div>
+                        </div>
+
+                        {numberOfNights > 0 && (
+                            <div className="bg-black text-white p-6 space-y-4 mt-6">
+                            <div className="flex justify-between items-center text-sm font-bold uppercase tracking-wider">
+                                <span className="text-white/60">Nights:</span>
+                                <span>{numberOfNights}</span>
+                            </div>
+                            <div className="flex justify-between items-center text-sm font-bold uppercase tracking-wider">
+                                <span className="text-white/60">Room (₵{selectedProperty.price}/night):</span>
+                                <span>₵{selectedProperty.price * numberOfNights}</span>
+                            </div>
+                            <div className="flex justify-between items-center text-sm font-bold uppercase tracking-wider">
+                                <span className="text-white/60">Security Deposit:</span>
+                                <span>₵{securityDeposit}</span>
+                            </div>
+                            <div className="border-t-2 border-white/20 pt-4 mt-4 flex justify-between items-center">
+                                <span className="text-sm font-black uppercase tracking-widest">Total:</span>
+                                <span className="text-3xl font-black text-accent">
+                                ₵{selectedProperty.price * numberOfNights + securityDeposit}
+                                </span>
+                            </div>
+                            </div>
+                        )}
+
+                        <button
+                            onClick={handlePaystackPayment}
+                            disabled={isProcessing || numberOfNights <= 0}
+                            className="w-full inline-flex items-center justify-center gap-2 bg-accent text-black font-black uppercase tracking-widest px-8 py-5 hover:bg-black hover:text-white border-2 border-transparent hover:border-black transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-accent disabled:hover:text-black disabled:hover:border-transparent mt-4"
+                        >
+                            {isProcessing ? 'Processing...' : 'Make Payment'}
+                            {!isProcessing && <ArrowRight className="w-5 h-5 ml-2" />}
+                        </button>
+                        
+                        <p className="text-xs font-bold uppercase tracking-widest text-black/40 text-center mt-4">
+                            Secure payment powered by Paystack
+                        </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
