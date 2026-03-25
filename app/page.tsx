@@ -5,14 +5,14 @@ import Link from 'next/link';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-hidden selection:bg-accent selection:text-black">
+    <div className="min-h-screen bg-white text-black overflow-hidden selection:bg-black selection:text-white">
       <header className="sticky top-0 z-50 bg-black border-b-2 border-white/10 backdrop-blur-md">
         <div className="max-w-screen-2xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link
             href="/"
             className="flex items-center gap-2 group"
           >
-            <span className="text-2xl font-black text-white tracking-tighter uppercase group-hover:text-accent transition-colors duration-300">
+            <span className="text-2xl font-black text-white tracking-tighter uppercase group-hover:text-white transition-colors duration-300">
               Brands by Ye
             </span>
           </Link>
@@ -38,7 +38,7 @@ export default function HomePage() {
           </nav>
           <Link
             href="#brands"
-            className="hidden md:inline-flex items-center gap-2 px-6 py-3 bg-white text-black text-xs font-black uppercase tracking-widest btn-capsule hover:bg-accent hover:text-black"
+            className="hidden md:inline-flex items-center gap-2 px-6 py-3 bg-white text-black text-xs font-black uppercase tracking-widest btn-capsule hover:bg-black hover:text-white border-2 border-white"
           >
             Explore
             <ArrowRight className="w-4 h-4" />
@@ -54,7 +54,6 @@ export default function HomePage() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none"
         >
-          {/* Changed background video to relate to "curated design" as requested */}
           <source
             src="/bg.mp4"
             type="video/mp4"
@@ -64,9 +63,16 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-grid opacity-40 pointer-events-none z-0" />
 
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 py-24 sm:py-32 w-full flex flex-col justify-center items-center text-center">
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-accent/30 mb-12 animate-slide-up">
-            <span className="text-xs font-bold text-accent tracking-[0.2em] uppercase">
-              Experience Luxury Redefined
+          <div className="inline-flex items-center gap-4 px-5 py-3 rounded-full border-2 border-white/60 mb-12 animate-slide-up">
+            <Image
+              src="/icons/brands-by-ye.svg"
+              alt="Brands by Ye logo"
+              width={28}
+              height={28}
+              className="invert"
+            />
+            <span className="text-xs font-bold text-white tracking-[0.3em] uppercase">
+              Created to Curate
             </span>
           </div>
 
@@ -75,15 +81,15 @@ export default function HomePage() {
             style={{ animationDelay: '0.1s' }}
           >
             <span className="block text-white uppercase">Brands</span>
-            <span className="block text-accent uppercase">by Ye</span>
+            <span className="block text-white uppercase">by Ye</span>
           </h1>
 
           <p
-            className="text-lg sm:text-2xl font-medium text-white/60 max-w-2xl mx-auto mb-14 leading-snug animate-slide-up"
+            className="text-lg sm:text-2xl font-medium text-white/70 max-w-3xl mx-auto mb-14 leading-snug animate-slide-up"
             style={{ animationDelay: '0.2s' }}
           >
-            Curated luxury experiences — serene retreats, bespoke design, and
-            premium photobooth moments.
+            Curated luxury experiences: serene homes for long and short stays,
+            bespoke customised designs and premium photobooth rentals.
           </p>
 
           <div
@@ -92,7 +98,7 @@ export default function HomePage() {
           >
             <Link
               href="#brands"
-              className="group inline-flex items-center justify-center gap-3 px-8 py-5 bg-accent text-black btn-capsule text-sm hover:scale-105"
+              className="group inline-flex items-center justify-center gap-3 px-8 py-5 bg-white text-black btn-capsule text-sm hover:scale-105 border-2 border-white hover:bg-black hover:text-white"
             >
               Explore Collections
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -107,7 +113,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="bg-accent text-black border-b-2 border-black/10">
+      <div className="bg-white text-black border-b-2 border-black/10">
         <div className="max-w-screen-2xl mx-auto px-6 py-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 text-center md:divide-x-2 md:divide-black/20">
             {[
@@ -138,7 +144,7 @@ export default function HomePage() {
         <div className="max-w-screen-2xl mx-auto px-6">
           <div className="text-center md:text-left mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8 animate-slide-up">
             <div>
-              <p className="text-sm font-black uppercase tracking-[0.3em] text-accent mb-6">
+              <p className="text-sm font-black uppercase tracking-[0.3em] text-black mb-6">
                 Our Brands
               </p>
               <h2 className="text-5xl sm:text-8xl font-black text-black leading-[0.9] tracking-tighter uppercase">
@@ -147,9 +153,9 @@ export default function HomePage() {
                 <span className="text-black">One Vision.</span>
               </h2>
             </div>
-            <p className="max-w-md text-lg text-black/60 font-medium pb-2 border-b-2 border-accent">
-              We build brands that define modern luxury. Explore our curated
-              collections tailored for the discerning eye.
+            <p className="max-w-md text-lg text-black/60 font-medium pb-2 border-b-2 border-black">
+              Our brands define modern luxury. Explore our curated collections
+              tailored for the discerning eye.
             </p>
           </div>
 
@@ -158,7 +164,7 @@ export default function HomePage() {
               href="/serene-escapes"
               className="group block h-full"
             >
-              <div className="relative overflow-hidden bg-black text-white p-10 min-h-[600px] flex flex-col justify-between cursor-pointer transition-transform duration-500 hover:-translate-y-2 border-2 border-transparent hover:border-accent">
+              <div className="relative overflow-hidden bg-black text-white p-10 min-h-[600px] flex flex-col justify-between cursor-pointer transition-transform duration-500 hover:-translate-y-2 border-2 border-transparent hover:border-white">
                 <div className="relative z-10">
                   <div className="mb-12 inline-flex p-4 bg-white rounded-none shadow-xl group-hover:scale-110 transition-transform duration-300">
                     <Image
@@ -169,7 +175,7 @@ export default function HomePage() {
                       className="object-contain"
                     />
                   </div>
-                  <p className="text-xs font-black uppercase tracking-[0.4em] text-accent mb-6">
+                  <p className="text-xs font-black uppercase tracking-[0.4em] text-white/70 mb-6">
                     Collection 01
                   </p>
                   <h3 className="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-6">
@@ -183,10 +189,10 @@ export default function HomePage() {
                   </p>
                 </div>
                 <div className="relative z-10 flex items-center justify-between pt-10 border-t-2 border-white/10 mt-10">
-                  <span className="font-bold text-sm uppercase tracking-widest group-hover:text-accent transition-colors">
+                  <span className="font-bold text-sm uppercase tracking-widest group-hover:text-white transition-colors">
                     Explore Properties
                   </span>
-                  <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent transition-all duration-300">
+                  <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white transition-all duration-300">
                     <ArrowRight className="w-6 h-6 text-white group-hover:text-black" />
                   </div>
                 </div>
@@ -197,7 +203,7 @@ export default function HomePage() {
               href="/curated-design"
               className="group block h-full"
             >
-              <div className="relative overflow-hidden bg-accent text-black p-10 min-h-[600px] flex flex-col justify-between cursor-pointer transition-transform duration-500 hover:-translate-y-2 border-2 border-transparent hover:border-black">
+              <div className="relative overflow-hidden bg-white text-black p-10 min-h-[600px] flex flex-col justify-between cursor-pointer transition-transform duration-500 hover:-translate-y-2 border-2 border-black">
                 <div className="relative z-10">
                   <div className="mb-12 inline-flex p-4 bg-black rounded-none shadow-xl group-hover:scale-110 transition-transform duration-300">
                     <Image
@@ -226,7 +232,7 @@ export default function HomePage() {
                     View Portfolio
                   </span>
                   <div className="w-14 h-14 rounded-full bg-black/5 flex items-center justify-center group-hover:bg-black transition-all duration-300">
-                    <ArrowRight className="w-6 h-6 text-black group-hover:text-accent" />
+                    <ArrowRight className="w-6 h-6 text-black group-hover:text-white" />
                   </div>
                 </div>
               </div>
@@ -236,7 +242,7 @@ export default function HomePage() {
               href="/photobooth"
               className="group block h-full"
             >
-              <div className="relative overflow-hidden bg-[#111111] text-white p-10 min-h-[600px] flex flex-col justify-between cursor-pointer transition-transform duration-500 hover:-translate-y-2 border-2 border-transparent hover:border-accent">
+              <div className="relative overflow-hidden bg-black text-white p-10 min-h-[600px] flex flex-col justify-between cursor-pointer transition-transform duration-500 hover:-translate-y-2 border-2 border-transparent hover:border-white">
                 <div className="relative z-10">
                   <div className="mb-12 inline-flex p-4 bg-white rounded-none shadow-xl group-hover:scale-110 transition-transform duration-300">
                     <Image
@@ -247,7 +253,7 @@ export default function HomePage() {
                       className="object-contain"
                     />
                   </div>
-                  <p className="text-xs font-black uppercase tracking-[0.4em] text-accent mb-6">
+                  <p className="text-xs font-black uppercase tracking-[0.4em] text-white/70 mb-6">
                     Collection 03
                   </p>
                   <h3 className="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-6">
@@ -261,10 +267,10 @@ export default function HomePage() {
                   </p>
                 </div>
                 <div className="relative z-10 flex items-center justify-between pt-10 border-t-2 border-white/10 mt-10">
-                  <span className="font-bold text-sm uppercase tracking-widest group-hover:text-accent transition-colors">
+                  <span className="font-bold text-sm uppercase tracking-widest group-hover:text-white transition-colors">
                     Book Now
                   </span>
-                  <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent transition-all duration-300">
+                  <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white transition-all duration-300">
                     <ArrowRight className="w-6 h-6 text-white group-hover:text-black" />
                   </div>
                 </div>
@@ -279,12 +285,12 @@ export default function HomePage() {
         <div className="relative max-w-screen-2xl mx-auto px-6">
           <div className="flex flex-col md:flex-row gap-16 justify-between mb-24 animate-slide-up">
             <div className="max-w-2xl">
-              <p className="text-sm font-black uppercase tracking-[0.3em] text-accent mb-6">
+              <p className="text-sm font-black uppercase tracking-[0.3em] text-white mb-6">
                 Why Choose Us
               </p>
               <h2 className="text-5xl sm:text-7xl font-black leading-[0.9] tracking-tighter uppercase mb-8">
                 The Brands by Ye{' '}
-                <span className="text-accent underline decoration-4 underline-offset-8">
+                <span className="text-white underline decoration-4 underline-offset-8">
                   Promise.
                 </span>
               </h2>
@@ -334,7 +340,7 @@ export default function HomePage() {
                 key={i}
                 className="group p-10 border-b-2 border-r-2 border-white/10 bg-black hover:bg-white hover:text-black transition-colors duration-300"
               >
-                <span className="text-4xl text-accent mb-8 block group-hover:text-black transition-colors">
+                <span className="text-4xl text-white mb-8 block group-hover:text-black transition-colors">
                   {f.icon}
                 </span>
                 <h4 className="text-2xl font-black uppercase tracking-tight mb-4">
@@ -364,7 +370,7 @@ export default function HomePage() {
               </p>
             </div>
             <div>
-              <h4 className="text-sm font-black uppercase tracking-[0.3em] text-accent mb-8">
+              <h4 className="text-sm font-black uppercase tracking-[0.3em] text-white mb-8">
                 Collections
               </h4>
               <ul className="space-y-4">
@@ -377,7 +383,7 @@ export default function HomePage() {
                   <li key={l.href}>
                     <Link
                       href={l.href}
-                      className="text-sm font-bold uppercase tracking-widest text-white/60 hover:text-accent transition-colors flex items-center gap-3 group"
+                      className="text-sm font-bold uppercase tracking-widest text-white/60 hover:text-white transition-colors flex items-center gap-3 group"
                     >
                       <ArrowRight className="w-4 h-4 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                       {l.label}
@@ -387,7 +393,7 @@ export default function HomePage() {
               </ul>
             </div>
             <div>
-              <h4 className="text-sm font-black uppercase tracking-[0.3em] text-accent mb-8">
+              <h4 className="text-sm font-black uppercase tracking-[0.3em] text-white mb-8">
                 Connect
               </h4>
               <p className="text-lg text-white/60 font-medium leading-relaxed mb-6">
@@ -396,7 +402,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="#"
-                className="inline-block text-sm font-bold uppercase tracking-widest text-white border-b-2 border-accent pb-1 hover:text-accent transition-colors"
+                className="inline-block text-sm font-bold uppercase tracking-widest text-white border-b-2 border-white pb-1 hover:text-white transition-colors"
               >
                 Contact Us
               </Link>
@@ -407,7 +413,7 @@ export default function HomePage() {
               &copy; {new Date().getFullYear()} Brands by Ye. All rights
               reserved.
             </p>
-            <p className="mt-4 sm:mt-0 text-accent">
+            <p className="mt-4 sm:mt-0 text-white">
               Luxury · Creative · Curated
             </p>
           </div>

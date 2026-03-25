@@ -21,141 +21,141 @@ interface BookingPackage {
   duration: string;
   price: number;
   features: string[];
+  color: string;
   popular?: boolean;
 }
 
 interface BookedDate {
   date: string;
   bookedByName: string;
+  type: string;
+  time: string;
 }
 
 const packages: BookingPackage[] = [
   {
     id: 1,
-    name: 'Classic Package',
-    duration: '2 hours',
-    price: 299,
+    name: 'Frame Booth',
+    duration: '3 hours',
+    price: 1699,
     features: [
-      '2 hours of booth time',
-      'Unlimited prints',
-      'Digital copies',
-      'One attendant',
+      '3 hours of booth time',
+      'Custom photobooth designs',
+      'Custom photobooth signages',
+      'One photobooth attendant',
     ],
+    color: 'bg-emerald-500',
   },
   {
     id: 2,
-    name: 'Premium Package',
+    name: 'Backdrop & Photodrop Duo',
     duration: '4 hours',
-    price: 499,
-    popular: true,
+    price: 2499,
     features: [
       '4 hours of booth time',
-      'Unlimited prints',
-      'Digital copies',
-      'Custom backdrop',
-      'Two attendants',
-      'Props included',
+      'Custom backdrop design',
+      'One photobooth attendant',
     ],
+    color: 'bg-amber-500',
   },
   {
     id: 3,
-    name: 'Deluxe Package',
-    duration: '6 hours',
-    price: 699,
+    name: 'Message Wall',
+    duration: '4 hours',
+    price: 2599,
     features: [
-      '6 hours of booth time',
-      'Unlimited prints',
-      'Digital copies',
-      'Premium backdrop',
-      'Two attendants',
-      'Luxury props',
-      'Video option',
+      '4 hours of booth time',
+      'Custom photobooth designs',
+      'Writing tools',
+      'One photobooth attendant',
     ],
+    color: 'bg-rose-500',
   },
   {
     id: 4,
-    name: 'Executive Package',
-    duration: '8 hours',
-    price: 899,
+    name: 'Seated Booth',
+    duration: '6 hours',
+    price: 3000,
     features: [
-      '8 hours of booth time',
-      'Unlimited prints',
-      'Digital copies',
-      'Premium backdrop',
-      'Two attendants',
-      'Luxury props',
-      'Video option',
-      'Social media integration',
-      'Guest book option',
+      '6 hours of booth time',
+      'Custom booth design',
+      'Custom photobooth signages',
+      'One photobooth attendant',
     ],
+    color: 'bg-sky-500',
   },
   {
     id: 5,
-    name: 'Platinum Package',
-    duration: '10 hours',
-    price: 1199,
+    name: 'Telephone Booth',
+    duration: '6 hours',
+    price: 3500,
     features: [
-      '10 hours of booth time',
-      'Unlimited prints',
-      'Digital copies',
-      'Premium backdrop',
-      'Three attendants',
-      'Luxury props',
-      'Video option',
-      'Social media integration',
-      'Green screen option',
-      'GIF creation',
+      '6 hours of booth time',
+      'Custom booth design',
+      'Custom photobooth signages',
+      'Two photobooth attendants',
+      'Complimentary packages and add-ons',
     ],
+    color: 'bg-violet-500',
   },
   {
     id: 6,
-    name: 'Grand Celebration Package',
-    duration: '12 hours',
-    price: 1499,
+    name: 'Magazine Booth',
+    duration: '6 hours',
+    price: 4000,
     features: [
-      '12 hours of booth time',
-      'Unlimited prints',
-      'Digital copies',
-      '3 Premium backdrops',
-      'Three attendants',
-      'Luxury props',
-      'Video option',
-      'Social media integration',
-      'Green screen option',
-      'GIF creation',
-      'Custom branding',
+      '6 hours of booth time',
+      'Custom booth design',
+      'Custom photobooth signages',
+      'Two photobooth attendants',
+      'Complimentary packages and add-ons',
     ],
-  },
-  {
-    id: 7,
-    name: 'All-Day Elite Package',
-    duration: '24 hours',
-    price: 2499,
-    features: [
-      '24 hours of booth time',
-      'Unlimited prints',
-      'Digital copies',
-      '5 Premium backdrops',
-      'Four attendants',
-      'Luxury props',
-      'Video option',
-      'Social media integration',
-      'Green screen option',
-      'GIF & Boomerang creation',
-      'Custom branding',
-      'Professional photo album',
-    ],
+    color: 'bg-cyan-500',
   },
 ];
 
 const bookedDates: BookedDate[] = [
-  { date: '2024-02-14', bookedByName: 'Sarah & John' },
-  { date: '2024-02-15', bookedByName: 'Corporate Event' },
-  { date: '2024-02-17', bookedByName: 'Birthday Party' },
-  { date: '2024-02-21', bookedByName: 'Wedding Reception' },
-  { date: '2024-02-24', bookedByName: 'Bridal Shower' },
-  { date: '2024-02-28', bookedByName: 'Private Party' },
+  {
+    date: '2026-03-05',
+    bookedByName: 'Sarah & John',
+    type: 'Frame Booth',
+    time: '2:00 PM - 5:00 PM',
+  },
+  {
+    date: '2026-03-08',
+    bookedByName: 'Corporate Event',
+    type: 'Backdrop & Photodrop Duo',
+    time: '6:00 PM - 10:00 PM',
+  },
+  {
+    date: '2026-03-12',
+    bookedByName: 'Birthday Party',
+    type: 'Message Wall',
+    time: '3:00 PM - 7:00 PM',
+  },
+  {
+    date: '2026-03-16',
+    bookedByName: 'Wedding Reception',
+    type: 'Seated Booth',
+    time: '1:00 PM - 7:00 PM',
+  },
+  {
+    date: '2026-03-22',
+    bookedByName: 'Bridal Shower',
+    type: 'Telephone Booth',
+    time: '4:00 PM - 10:00 PM',
+  },
+  {
+    date: '2026-03-27',
+    bookedByName: 'Private Party',
+    type: 'Magazine Booth',
+    time: '5:00 PM - 11:00 PM',
+  },
 ];
+
+const packageColorMap = new Map(
+  packages.map((pkg) => [pkg.name, pkg.color]),
+);
 
 export default function Photobooth() {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
@@ -172,18 +172,13 @@ export default function Photobooth() {
     'idle' | 'success' | 'error'
   >('idle');
 
-  const isDateBooked = (date: string) =>
-    bookedDates.some((b) => b.date === date);
-
   const getDaysInMonth = (date: Date) =>
     new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 
-  const getCurrentMonth = () => {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = today.getMonth();
+  const getCurrentMonth = (date: Date) => {
+    const year = date.getFullYear();
+    const month = date.getMonth();
     const firstDay = new Date(year, month, 1);
-    const lastDay = new Date(year, month, getDaysInMonth(firstDay));
     const daysArray: (number | null)[] = [];
 
     for (let i = 0; i < firstDay.getDay(); i++) {
@@ -214,8 +209,9 @@ export default function Photobooth() {
     }, 2000);
   };
 
-  const days = getCurrentMonth();
-  const monthName = new Date().toLocaleString('default', {
+  const today = new Date();
+  const days = getCurrentMonth(today);
+  const monthName = today.toLocaleString('default', {
     month: 'long',
     year: 'numeric',
   });
@@ -274,7 +270,7 @@ export default function Photobooth() {
       <section className="max-w-screen-2xl mx-auto px-6 py-24 sm:py-32">
         <div className="mb-20 text-center max-w-3xl mx-auto">
           <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter mb-8 text-black bg-accent px-4 py-2 inline-block">
-             Packages
+            Photobooth Types
           </h2>
           <p className="text-xl text-black/60 font-medium leading-relaxed">
             Choose the perfect photobooth experience for your event
@@ -297,6 +293,15 @@ export default function Photobooth() {
                 </div>
               )}
               <div className="p-10 flex flex-col flex-1">
+                <div className="flex items-center gap-3 mb-6">
+                  <span
+                    className={`w-4 h-4 ${pkg.color} border-2 border-black`}
+                    aria-hidden
+                  />
+                  <p className="text-xs font-black uppercase tracking-widest text-black/60">
+                    Colour-coded type
+                  </p>
+                </div>
                 <h3 className="text-3xl font-black uppercase tracking-tighter text-black mb-2">
                   {pkg.name}
                 </h3>
@@ -309,7 +314,9 @@ export default function Photobooth() {
                     <span className="text-5xl font-black text-black">
                       ₵{pkg.price}
                     </span>
-                    <span className="text-black/50 font-bold uppercase tracking-widest text-xs">/event</span>
+                    <span className="text-black/50 font-bold uppercase tracking-widest text-xs">
+                      cedis/event
+                    </span>
                   </div>
                 </div>
 
@@ -344,6 +351,82 @@ export default function Photobooth() {
         </div>
       </section>
 
+      <section className="bg-black text-white py-24 sm:py-32 border-y-2 border-white/10">
+        <div className="max-w-screen-2xl mx-auto px-6">
+          <div className="mb-16 text-center max-w-3xl mx-auto">
+            <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tighter mb-6 text-white">
+              Services Include
+            </h2>
+            <p className="text-lg text-white/60 font-medium leading-relaxed">
+              Everything needed to deliver a premium photobooth experience.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              'Custom booth setup and signages',
+              'Onsite photobooth attendants',
+              'Adequate lighting',
+              'Custom backdrop styling',
+              'Event Handprops & Branded selfie photo frames',
+            ].map((item) => (
+              <div
+                key={item}
+                className="flex items-start gap-4 border-2 border-white/10 p-6"
+              >
+                <CheckCircle2 className="w-6 h-6 text-white shrink-0" />
+                <p className="text-base text-white/70 font-medium">{item}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="border-2 border-white/20 p-8 bg-black">
+              <h3 className="text-xl font-black uppercase tracking-widest mb-6">
+                Complimentary Packages
+              </h3>
+              <ul className="space-y-4 text-white/70 font-medium">
+                {['Audio recorder', 'Guest book', 'Decorated bicycle and garden signages'].map(
+                  (item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span className="w-2 h-2 bg-white mt-2" aria-hidden />
+                      {item}
+                    </li>
+                  ),
+                )}
+              </ul>
+            </div>
+
+            <div className="border-2 border-white/20 p-8 bg-black">
+              <h3 className="text-xl font-black uppercase tracking-widest mb-6">
+                Add-ons
+              </h3>
+              <ul className="space-y-4 text-white/70 font-medium">
+                {['Event Handprops', 'Branded selfie photo frames'].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-white mt-2" aria-hidden />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="border-2 border-white/20 p-8 bg-black">
+              <h3 className="text-xl font-black uppercase tracking-widest mb-6">
+                Disclaimer
+              </h3>
+              <p className="text-white/70 font-medium leading-relaxed">
+                Images are used for inspiration and to represent the style and
+                structure of photobooths we can create. Custom setups can be
+                designed to achieve a similar look. Our photobooth features a
+                sleek white finish as its default color. Custom color options
+                may also be available upon request.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#f9f9f9] border-y-2 border-black/10 py-24 sm:py-32">
         <div className="max-w-screen-2xl mx-auto px-6">
           <div className="mb-16 text-center">
@@ -351,7 +434,7 @@ export default function Photobooth() {
               {monthName}
             </h2>
             <p className="text-lg text-black/60 font-medium">
-              View available and booked dates
+              View available and booked dates with colour-coded photobooth types
             </p>
           </div>
 
@@ -373,16 +456,21 @@ export default function Photobooth() {
 
                 <div className="grid grid-cols-7 gap-4">
                   {days.map((day, idx) => {
-                    const today = new Date();
+                    const currentYear = today.getFullYear();
+                    const currentMonth = today.getMonth() + 1;
                     const isToday =
                       day === today.getDate() &&
                       today.getMonth() === new Date().getMonth();
                     const dateStr = day
-                      ? `2024-02-${String(day).padStart(2, '0')}`
+                      ? `${currentYear}-${String(currentMonth).padStart(2, '0')}-${String(day).padStart(2, '0')}`
                       : '';
-                    const booked = day
-                      ? bookedDates.some((b) => b.date === dateStr)
-                      : false;
+                    const booking = day
+                      ? bookedDates.find((b) => b.date === dateStr)
+                      : null;
+                    const booked = Boolean(booking);
+                    const bookingColor = booking
+                      ? packageColorMap.get(booking.type) || 'bg-black'
+                      : '';
 
                     return (
                       <div
@@ -391,7 +479,7 @@ export default function Photobooth() {
                           day === null
                             ? 'opacity-0 cursor-default border-transparent'
                             : booked
-                              ? 'bg-black text-black/40 border-black/20 cursor-not-allowed repeating-linear-gradient'
+                              ? `${bookingColor} text-white border-black/20 cursor-not-allowed`
                               : isToday
                                 ? 'bg-accent text-black border-black cursor-pointer hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
                                 : 'bg-white text-black border-black/20 hover:border-black cursor-pointer hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
@@ -417,10 +505,15 @@ export default function Photobooth() {
                   <div className="w-6 h-6 border-2 border-black bg-white" />
                   <span>Available</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 bg-black" />
-                  <span>Booked</span>
-                </div>
+                {packages.map((pkg) => (
+                  <div
+                    key={pkg.id}
+                    className="flex items-center gap-3"
+                  >
+                    <div className={`w-6 h-6 ${pkg.color} border-2 border-black`} />
+                    <span>{pkg.name}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -445,6 +538,16 @@ export default function Photobooth() {
                       <p className="text-sm font-bold text-black/60 uppercase tracking-widest">
                         {booking.bookedByName}
                       </p>
+                      <div className="mt-3 flex flex-wrap items-center gap-3">
+                        <span
+                          className={`inline-flex items-center gap-2 px-3 py-1 text-xs font-black uppercase tracking-widest border-2 border-black ${packageColorMap.get(booking.type) || 'bg-black'} text-white`}
+                        >
+                          {booking.type}
+                        </span>
+                        <span className="text-xs font-bold uppercase tracking-widest text-black/60">
+                          {booking.time}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 ))}
